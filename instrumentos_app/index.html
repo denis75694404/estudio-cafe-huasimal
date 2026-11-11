@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#1B7A3E"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2716%27 fill=%27%23ff5d73%27/%3E%3Cpath d=%27M16 24s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 24 13c0 6-8 11-8 11z%27 fill=%27white%27/%3E%3C/svg%3E"/>
+<title>Café Huasimal · Recolección de datos</title>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="Café Huasimal"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } } ::-webkit-scrollbar { display: none; }</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed": "#CDEBD6", "alert-high-risk": "#DC2626", "sage-teal": "#1B7A3E", "alert-low-risk": "#16A34A", "inverse-primary": "#F3C77A", "tertiary-fixed": "#ffddb8", "text-tertiary": "#A8A29E", "on-secondary-container": "#14592D", "on-background": "#1e1b1a", "tertiary-container": "#d18500", "surface": "#fff8f6", "coral-primary": "#C8892B", "on-secondary": "#ffffff", "secondary": "#1B7A3E", "on-primary-container": "#3A2112", "surface-container-lowest": "#ffffff", "cream-bg": "#FFFBF8", "text-secondary": "#57534E", "on-surface-variant": "#594042", "outline": "#8d7071", "surface-container-low": "#fbf2f0", "surface-container-high": "#efe6e4", "surface-container": "#f5ecea", "sage-light": "#E3F2E6", "on-tertiary": "#ffffff", "cream-card": "#FFFFFF", "surface-tint": "#7B4A2A", "background": "#fff8f6", "tertiary": "#855300", "outline-variant": "#e1bebf", "primary-fixed": "#F6E7CF", "secondary-container": "#CDEBD6", "error": "#ba1a1a", "on-primary": "#ffffff", "surface-variant": "#e9e1df", "coral-hover": "#A86F1F", "text-primary": "#292524", "cream-surface": "#FAF5F0", "border-soft": "#F0E7DE", "on-surface": "#1e1b1a", "coral-soft": "#FAEEDA", "primary-container": "#C8892B", "primary": "#7B4A2A" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-2xl": "3rem", "space-xs": "0.5rem", "space-2xs": "0.25rem", "space-xl": "2rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem", "gutter": "1.25rem", "margin": "2rem", "margin-mobile": "1rem", "space-sm": "0.75rem" }, "fontFamily": { "display-hero-mobile": ["Plus Jakarta Sans"], "title-lg": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"] }, "fontSize": { "display-hero-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "display-hero": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-lg": ["17px", { "lineHeight": "26px", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }] } } } };</script>
+<style>
+:root{--primary:#7B4A2A;--pc:#C8892B;--coral-soft:#FFE8EC;--coral-hover:#E0485E;--cream:#FAF5F0;--sec:#1B7A3E;--sage:#CCFBF1;--sec-cont:#86f2e4;--ter:#855300;--ter-fix:#ffddb8;--tp:#292524;--ts:#57534E;--tt:#A8A29E;--bd:#F0E7DE;--scl:#fbf2f0;--danger:#DC2626;--ok:#16A34A}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--tp);-webkit-tap-highlight-color:transparent}
+.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;display:inline-block;width:1em;height:1em;overflow:hidden;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;font-feature-settings:'liga';-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24;user-select:none;vertical-align:middle}
+.fill{font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24}
+.hidden{display:none!important}
+
+/* animaciones */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(.6)}60%{transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(220,38,38,.55)}100%{box-shadow:0 0 0 20px rgba(220,38,38,0)}}
+@keyframes bar{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
+@keyframes flash{0%,100%{box-shadow:0 0 0 0 rgba(200,137,43,0)}30%{box-shadow:0 0 0 6px rgba(200,137,43,.35)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes shake{0%,100%{transform:none}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes confetti{0%{transform:translateY(-20px) rotate(0);opacity:1}100%{transform:translateY(105vh) rotate(720deg);opacity:.9}}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.view:not(.hidden){animation:fadeUp .45s cubic-bezier(.2,.8,.2,1) both}
+.stagger>*{animation:fadeUp .55s cubic-bezier(.2,.8,.2,1) both}
+.stagger>*:nth-child(2){animation-delay:.07s}.stagger>*:nth-child(3){animation-delay:.14s}.stagger>*:nth-child(4){animation-delay:.21s}.stagger>*:nth-child(5){animation-delay:.28s}.stagger>*:nth-child(6){animation-delay:.35s}
+.floaty{animation:float 4s ease-in-out infinite}
+.spin{animation:spin 1s linear infinite}
+.shake{animation:shake .35s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* componentes */
+.card{background:#fff;border-radius:24px;box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.hero-btn{position:relative;overflow:hidden;border-radius:28px;padding:22px;text-align:left;transition:transform .25s,box-shadow .25s;width:100%}
+.hero-btn:hover{transform:translateY(-3px)}
+.hero-btn:active{transform:scale(.98)}
+.hero-btn .bigico{position:absolute;right:-14px;bottom:-22px;font-size:120px;opacity:.14}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:9999px;background:var(--cream);color:var(--ts);font-weight:600;font-size:13px;transition:.2s;white-space:nowrap;border:0;cursor:pointer}
+.chip .material-symbols-outlined{font-size:18px}
+.chip.on{background:var(--coral-soft);color:var(--primary);box-shadow:0 1px 4px rgba(200,137,43,.18)}
+.chip:active{transform:scale(.94)}
+.tab{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 10px;border-radius:9999px;font-weight:700;font-size:14px;color:var(--ts);transition:.25s;border:0;background:transparent;cursor:pointer}
+.tab .n{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#e9e1df;font-size:12px}
+.tab.on{background:var(--primary);color:#fff;box-shadow:0 4px 12px rgba(123,74,42,.25)}
+.tab.on .n{background:#fff;color:var(--primary)}
+.tab:disabled{opacity:.45;cursor:not-allowed}
+.pick{display:block;width:100%;text-align:left;padding:18px;border-radius:24px;background:#fff;border:2px solid transparent;box-shadow:0 4px 16px rgba(0,0,0,.05);transition:.22s;cursor:pointer}
+.pick:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(200,137,43,.14)}
+.pick.on{border-color:var(--pc);background:linear-gradient(135deg,#fff,var(--coral-soft))}
+.pick.on .tick{opacity:1;transform:scale(1)}
+.tick{opacity:0;transform:scale(.4);transition:.25s;background:var(--primary);color:#fff;border-radius:50%;width:28px;height:28px;display:grid;place-items:center;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:9999px;font-weight:700;font-size:15px;transition:.2s;border:0;cursor:pointer;min-height:48px}
+.btn:active{transform:scale(.96)}
+.btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none!important}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 8px 20px rgba(123,74,42,.28)}
+.btn-primary:hover:not(:disabled){background:var(--coral-hover)}
+.btn-sec{background:var(--sec);color:#fff;box-shadow:0 8px 20px rgba(27,122,62,.25)}
+.btn-ghost{background:var(--cream);color:var(--tp)}
+.btn-danger{background:#fee2e2;color:var(--danger)}
+.fab{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;border:0;cursor:pointer;transition:.2s;flex-shrink:0;font-size:24px}
+.fab:active{transform:scale(.9)}
+.fab-rec{background:var(--sage);color:var(--sec)}
+.fab-cam{background:var(--ter-fix);color:var(--ter)}
+.fab.off{opacity:.4}
+.recording .fab-rec.live,.qtool.live{background:var(--danger)!important;color:#fff!important;animation:ring 1.2s infinite}
+.qcard{background:#fff;border-radius:24px;padding:18px;border:2px solid var(--bd);transition:border-color .3s,box-shadow .3s,opacity .3s;scroll-margin-top:96px}
+.qcard.done{border-color:#bbf7d0}
+.qcard.flash{animation:flash 1.1s 2}
+.qcard.hide{display:none}
+.qnum{width:30px;height:30px;border-radius:50%;background:var(--coral-soft);color:var(--primary);display:grid;place-items:center;font-weight:800;font-size:13px;flex-shrink:0}
+.qcard.done .qnum{background:var(--ok);color:#fff}
+.qcat{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:none;color:var(--sec);margin-bottom:2px}
+.qcat .material-symbols-outlined{font-size:14px}
+.qtext{font-size:16px;line-height:24px;font-weight:600}
+.opt{display:block;cursor:pointer;position:relative}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt-body{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:16px;background:var(--scl);border:2px solid transparent;transition:.2s;min-height:54px;font-weight:500;font-size:15px}
+.opt-body .ico{font-size:24px;color:var(--ts);transition:.2s}
+.opt-body .chk{margin-left:auto;width:24px;height:24px;border-radius:50%;border:2px solid #d6cdc7;display:grid;place-items:center;flex-shrink:0;transition:.2s;color:#fff}
+.opt-body .chk .material-symbols-outlined{font-size:16px;opacity:0;transform:scale(.3);transition:.2s}
+.multi .opt-body .chk{border-radius:8px}
+.opt:hover .opt-body{background:#f6e9e6}
+.opt input:checked+.opt-body{background:var(--coral-soft);border-color:var(--pc);color:var(--primary);font-weight:700}
+.opt input:checked+.opt-body .chk{background:var(--primary);border-color:var(--primary);animation:pop .3s}
+.opt input:checked+.opt-body .chk .material-symbols-outlined{opacity:1;transform:none}
+.opt input:checked+.opt-body .ico{color:var(--primary)}
+.opt input:focus-visible+.opt-body{outline:3px solid rgba(123,74,42,.3)}
+.fld{width:100%;background:var(--scl);border-radius:14px;padding:12px 14px;font-size:16px;font-family:inherit;outline:none;border:2px solid transparent;transition:.2s;color:var(--tp)}
+.fld:focus{border-color:rgba(200,137,43,.55);background:#fff;box-shadow:0 0 0 4px rgba(200,137,43,.12)}
+.fld.err,.err-box{border-color:var(--danger)!important}
+.lbl{display:block;font-size:12px;font-weight:700;color:var(--ts);margin-bottom:6px;letter-spacing:.02em}
+.qtool{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:9999px;background:var(--cream);font-size:13px;font-weight:600;color:var(--ts);border:0;cursor:pointer;transition:.2s}
+.qtool .material-symbols-outlined{font-size:18px}
+.qtool:active{transform:scale(.94)}
+.qtool.off{opacity:.45}
+.mchip{display:inline-flex;align-items:center;gap:4px;padding:5px 6px 5px 10px;border-radius:9999px;background:var(--sage);color:var(--sec);font-size:12px;font-weight:700}
+.mchip.foto{background:var(--ter-fix);color:var(--ter)}
+.mchip button{border:0;background:rgba(0,0,0,.08);border-radius:50%;width:20px;height:20px;display:grid;place-items:center;cursor:pointer}
+.mchip .material-symbols-outlined{font-size:14px}
+.steps{display:flex;align-items:center;gap:6px;justify-content:center}
+.step{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--tt)}
+.step i{width:26px;height:26px;border-radius:50%;background:#e9e1df;color:var(--ts);display:grid;place-items:center;font-style:normal;font-size:13px;transition:.3s}
+.step.on{color:var(--primary)}.step.on i{background:var(--primary);color:#fff;box-shadow:0 0 0 5px var(--coral-soft)}
+.step.done{color:var(--sec)}.step.done i{background:var(--sec);color:#fff}
+.step-line{flex:1;max-width:38px;height:3px;border-radius:2px;background:#e9e1df}
+.step-line.done{background:var(--sec)}
+.sig{touch-action:none;background:#fff;border:2px dashed var(--pc);border-radius:16px;width:100%;height:180px;display:block}
+.switch{display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;background:var(--scl);cursor:pointer;transition:.2s;border:2px solid transparent}
+.switch input{display:none}
+.switch .trk{width:46px;height:26px;border-radius:13px;background:#d6cdc7;position:relative;transition:.25s;flex-shrink:0}
+.switch .trk::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.25s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.switch input:checked~.trk{background:var(--sec)}
+.switch input:checked~.trk::after{left:23px}
+.switch:has(input:checked){background:var(--sage)}
+details.acc{background:#fff;border-radius:20px;border:2px solid var(--bd);overflow:hidden;transition:.2s}
+details.acc[open]{border-color:var(--sec-cont)}
+details.acc summary{list-style:none;display:flex;align-items:center;gap:10px;padding:14px 16px;font-weight:700;cursor:pointer}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary .car{margin-left:auto;transition:.25s}
+details.acc[open] summary .car{transform:rotate(180deg)}
+details.acc .body{padding:0 16px 16px;font-size:15px;line-height:23px;color:var(--ts)}
+details.acc[open] .body{animation:fadeUp .3s both}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 -6px 24px rgba(0,0,0,.08);border-radius:24px 24px 0 0;transition:transform .3s}
+.wave{display:flex;align-items:center;gap:3px;height:28px}
+.wave i{width:4px;height:100%;border-radius:2px;background:var(--danger);transform-origin:center;animation:bar .9s ease-in-out infinite}
+.wave i:nth-child(2){animation-delay:.12s}.wave i:nth-child(3){animation-delay:.24s}.wave i:nth-child(4){animation-delay:.36s}.wave i:nth-child(5){animation-delay:.48s}.wave i:nth-child(6){animation-delay:.6s}
+.wave.paused i{animation-play-state:paused;opacity:.4}
+.prog{height:10px;border-radius:5px;background:#f0e7de;overflow:hidden}
+.prog>div{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--pc),var(--primary));transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.ringp{--v:0;width:46px;height:46px;border-radius:50%;background:conic-gradient(var(--primary) calc(var(--v)*1%),#f0e7de 0);display:grid;place-items:center;flex-shrink:0;transition:.4s}
+.ringp span{width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:11px;font-weight:800;color:var(--primary)}
+.overlay{position:fixed;inset:0;z-index:70;background:rgba(41,37,36,.55);backdrop-filter:blur(4px);display:flex;align-items:flex-end;justify-content:center;padding:0}
+@media(min-width:640px){.overlay{align-items:center;padding:20px}}
+.sheet{background:#fff;width:100%;max-width:520px;max-height:90vh;overflow:auto;border-radius:28px 28px 0 0;padding:22px;animation:slideUp .35s cubic-bezier(.2,.8,.2,1)}
+@media(min-width:640px){.sheet{border-radius:28px}}
+.toasts{position:fixed;top:78px;left:0;right:0;z-index:90;display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none;padding:0 12px}
+.toast{background:var(--tp);color:#fff;padding:11px 16px;border-radius:9999px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(0,0,0,.25);animation:fadeUp .3s both;max-width:100%}
+.toast.ok{background:var(--sec)}.toast.bad{background:var(--danger)}
+.confetti{position:fixed;top:0;width:10px;height:14px;z-index:80;pointer-events:none;animation:confetti linear forwards}
+.skel{background:linear-gradient(90deg,#f0e7de 25%,#faf5f0 50%,#f0e7de 75%);background-size:200% 100%;animation:shimmer 1.4s infinite}
+@keyframes shimmer{to{background-position:-200% 0}}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.line2{display:-webkit-box;line-clamp:2;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@supports(min-height:100dvh){.flexview{min-height:calc(100dvh - 92px)}}
+.flexview{min-height:calc(100vh - 92px);display:flex;flex-direction:column}
+.flexview>div:first-child{flex:1;width:100%;min-width:0}
+textarea.fld{resize:none;min-height:96px;line-height:22px}
+</style></head>
+
+<body class="bg-background text-on-surface">
+<!-- ============ ENCABEZADO ============ -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="bg-secondary text-on-secondary px-3 py-1 text-center">
+    <div class="max-w-5xl mx-auto flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-[15px]">volunteer_activism</span>
+      <p class="font-label-sm text-label-sm tracking-wide truncate">Estudio de mercado del café • San Miguel de El Faique, Piura 2026</p>
+    </div>
+  </div>
+  <div class="h-14 max-w-5xl mx-auto px-4 flex items-center justify-between gap-3">
+    <button class="flex items-center gap-2 shrink-0" onclick="goHome()" aria-label="Ir al inicio">
+      <div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined fill text-[20px]">coffee</span></div>
+      <div class="flex flex-col text-left"><span class="font-title-md text-title-md leading-tight tracking-tight">Café Huasimal</span><span class="font-label-sm text-label-sm text-text-secondary leading-none">Recolección de datos</span></div>
+    </button>
+    <div class="flex items-center gap-2">
+      <span id="net" class="hidden sm:inline-flex items-center gap-1 px-3 py-1 rounded-full bg-sage-light text-secondary font-label-sm text-label-sm"><i class="dot bg-alert-low-risk"></i><span>En línea</span></span>
+      <button id="btn-pend" onclick="openPend()" class="relative w-10 h-10 rounded-full bg-cream-surface grid place-items-center text-text-secondary" aria-label="Pendientes de envío">
+        <span class="material-symbols-outlined text-[22px]">cloud_sync</span>
+        <span id="pend-badge" class="hidden absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-on-primary text-[11px] font-bold grid place-items-center">0</span>
+      </button>
+      <button onclick="openAjustes()" class="w-10 h-10 rounded-full bg-cream-surface grid place-items-center text-text-secondary" aria-label="Ajustes"><span class="material-symbols-outlined text-[22px]">settings</span></button>
+    </div>
+  </div>
+</header>
+<div id="toasts" class="toasts"></div>
+
+<main class="w-full pt-[92px] min-h-screen bg-background">
+
+<!-- ============ 1. INICIO ============ -->
+<section id="v-home" class="view">
+  <div class="relative overflow-hidden">
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[350px] bg-gradient-to-b from-coral-soft/70 via-cream-surface/40 to-transparent blur-3xl pointer-events-none -z-0"></div>
+    <div class="relative max-w-5xl mx-auto px-4 pt-6 pb-8 stagger">
+      <div class="inline-flex items-center gap-2 bg-coral-soft px-4 py-1.5 rounded-full shadow-[0_2px_8px_rgba(200,137,43,0.12)]">
+        <span class="material-symbols-outlined fill text-primary text-[18px]">eco</span>
+        <span class="font-label-md text-label-md text-primary tracking-wider">CIPCA · Estudio de mercado regional del café</span>
+      </div>
+      <h1 class="mt-4 text-[30px] leading-9 sm:text-[40px] sm:leading-[48px] font-bold tracking-tight text-text-primary">Recolección de datos en <span class="text-primary italic">campo</span></h1>
+      <p class="mt-2 font-body-lg text-body-lg text-text-secondary max-w-2xl">Oferta, demanda, precios, canales y género del café de la Cooperativa Huasimal y de las familias productoras de El Faique. Elija el instrumento para comenzar.</p>
+
+      <div id="draft-banner" class="hidden mt-5 card p-4 flex items-center gap-3 border-2 border-tertiary-fixed">
+        <div class="w-11 h-11 rounded-2xl bg-tertiary-fixed text-tertiary grid place-items-center shrink-0"><span class="material-symbols-outlined">edit_note</span></div>
+        <div class="flex-1 min-w-0"><p class="font-title-md text-title-md">Tiene un registro sin terminar</p><p id="draft-info" class="font-body-sm text-body-sm text-text-secondary truncate"></p></div>
+        <button class="btn btn-primary !px-4 !py-2 !min-h-0 text-sm" onclick="resumeDraft()">Continuar</button>
+        <button class="w-9 h-9 rounded-full bg-cream-surface grid place-items-center shrink-0" onclick="discardDraft()" aria-label="Descartar borrador"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <button class="hero-btn bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-[0_12px_28px_rgba(123,74,42,0.3)]" onclick="startEncuesta()">
+          <span class="material-symbols-outlined bigico fill">fact_check</span>
+          <span class="w-12 h-12 rounded-2xl bg-white/20 grid place-items-center mb-4"><span class="material-symbols-outlined text-[28px]">fact_check</span></span>
+          <span class="block text-[24px] font-bold leading-8">Encuesta</span>
+          <span class="block mt-1 text-[14px] opacity-90">2 cuestionarios para productores y productoras</span>
+          <span class="inline-flex items-center gap-1 mt-4 px-3 py-1.5 rounded-full bg-white/20 text-sm font-bold">Comenzar <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+        </button>
+        <button class="hero-btn bg-gradient-to-br from-secondary to-[#14592D] text-on-secondary shadow-[0_12px_28px_rgba(27,122,62,0.3)]" onclick="openSelect('entrevista')">
+          <span class="material-symbols-outlined bigico fill">record_voice_over</span>
+          <span class="w-12 h-12 rounded-2xl bg-white/20 grid place-items-center mb-4"><span class="material-symbols-outlined text-[28px]">record_voice_over</span></span>
+          <span class="block text-[24px] font-bold leading-8">Entrevista</span>
+          <span class="block mt-1 text-[14px] opacity-90">5 guías: compradores, grupo focal y actores clave</span>
+          <span class="inline-flex items-center gap-1 mt-4 px-3 py-1.5 rounded-full bg-white/20 text-sm font-bold">Comenzar <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+        </button>
+      </div>
+
+      <div class="mt-6 bg-surface-container-lowest rounded-3xl p-5 shadow-[0_8px_28px_rgba(217,119,6,0.05)]">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="flex flex-col sm:flex-row items-start gap-2 sm:gap-3 min-w-0"><div class="w-11 h-11 rounded-2xl bg-coral-soft text-primary grid place-items-center shrink-0"><span class="material-symbols-outlined">verified_user</span></div><div class="min-w-0"><p class="font-title-md text-title-md leading-tight">Consentimiento</p><p class="font-body-sm text-body-sm text-text-secondary">Informado y voluntario</p></div></div>
+          <div class="flex flex-col sm:flex-row items-start gap-2 sm:gap-3 min-w-0"><div class="w-11 h-11 rounded-2xl bg-sage-light text-secondary grid place-items-center shrink-0"><span class="material-symbols-outlined">mic</span></div><div class="min-w-0"><p class="font-title-md text-title-md leading-tight">Audio y fotos</p><p class="font-body-sm text-body-sm text-text-secondary">Solo si la persona autoriza</p></div></div>
+          <div class="flex flex-col sm:flex-row items-start gap-2 sm:gap-3 min-w-0"><div class="w-11 h-11 rounded-2xl bg-tertiary-fixed text-tertiary grid place-items-center shrink-0"><span class="material-symbols-outlined">table_chart</span></div><div class="min-w-0"><p class="font-title-md text-title-md leading-tight">Google Sheets</p><p class="font-body-sm text-body-sm text-text-secondary">Datos y archivos en la nube</p></div></div>
+          <div class="flex flex-col sm:flex-row items-start gap-2 sm:gap-3 min-w-0"><div class="w-11 h-11 rounded-2xl bg-secondary-container text-on-secondary-container grid place-items-center shrink-0"><span class="material-symbols-outlined">cloud_off</span></div><div class="min-w-0"><p class="font-title-md text-title-md leading-tight">Sin señal</p><p class="font-body-sm text-body-sm text-text-secondary">Se guarda y se envía después</p></div></div>
+        </div>
+      </div>
+
+      <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <a href="#" onclick="toast('El panel de avance se habilita al conectar la base de datos (Producto 2)', '', 'info');return false" class="card p-4 flex items-center gap-3 hover:shadow-lg transition"><div class="w-11 h-11 rounded-2xl bg-secondary-container text-on-secondary-container grid place-items-center"><span class="material-symbols-outlined">download</span></div><div class="flex-1"><p class="font-title-md text-title-md">Avance y descargas</p><p class="font-body-sm text-body-sm text-text-secondary">Indicadores, audios y fotos</p></div><span class="material-symbols-outlined text-text-tertiary">arrow_forward</span></a>
+        <button onclick="openPend()" class="card p-4 flex items-center gap-3 hover:shadow-lg transition text-left"><div class="w-11 h-11 rounded-2xl bg-coral-soft text-primary grid place-items-center"><span class="material-symbols-outlined">cloud_sync</span></div><div class="flex-1"><p class="font-title-md text-title-md">Pendientes de envío</p><p id="home-pend" class="font-body-sm text-body-sm text-text-secondary">Ninguno</p></div><span class="material-symbols-outlined text-text-tertiary">arrow_forward</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. SELECCIÓN ============ -->
+<section id="v-select" class="view flexview hidden">
+  <div class="max-w-3xl mx-auto px-4 pt-4 pb-6">
+    <button class="inline-flex items-center gap-1 text-text-secondary font-label-lg text-label-lg mb-3" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span> Inicio</button>
+    <div class="steps mb-4 hidden" id="steps-select"></div>
+    <div id="sel-head" class="flex items-center gap-3 mb-4"></div>
+    <div id="sel-tabs" class="bg-cream-surface p-1.5 rounded-full flex gap-1 mb-5">
+      <button id="tab-1" class="tab on" onclick="setTab(1)"><span class="n">1</span><span>Grupo</span></button>
+      <button id="tab-2" class="tab" onclick="setTab(2)" disabled><span class="n">2</span><span>Dirigido a</span></button>
+    </div>
+    <div id="sel-panel" class="space-y-3"></div>
+  </div>
+  <div id="sel-bar" class="sticky bottom-0 bg-white/90 backdrop-blur-xl px-4 py-3 shadow-[0_-6px_24px_rgba(0,0,0,.06)] rounded-t-3xl" style="padding-bottom:calc(12px + env(safe-area-inset-bottom))">
+    <div class="max-w-3xl mx-auto flex items-center gap-3">
+      <div id="sel-sum" class="flex-1 min-w-0 font-body-sm text-body-sm text-text-secondary truncate">Elija el tipo para continuar</div>
+      <button id="sel-go" class="btn btn-primary" disabled onclick="goConsent()">Continuar <span class="material-symbols-outlined text-[20px]">arrow_forward</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. CONSENTIMIENTO ============ -->
+<section id="v-consent" class="view flexview hidden">
+  <div class="max-w-3xl mx-auto px-4 pt-4 pb-6">
+    <div class="steps mb-4" id="steps-consent"></div>
+    <div id="consent-body" class="space-y-4"></div>
+  </div>
+  <div class="sticky bottom-0 bg-white/90 backdrop-blur-xl px-4 py-3 shadow-[0_-6px_24px_rgba(0,0,0,.06)] rounded-t-3xl" style="padding-bottom:calc(12px + env(safe-area-inset-bottom))">
+    <div class="max-w-3xl mx-auto flex items-center gap-3">
+      <button class="btn btn-ghost" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span> Atrás</button>
+      <button id="consent-go" class="btn btn-primary flex-1" onclick="acceptConsent()">Siguiente <span class="material-symbols-outlined text-[20px]">arrow_forward</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3b. DATOS GENERALES (encuesta) ============ -->
+<section id="v-general" class="view flexview hidden">
+  <div class="max-w-3xl mx-auto px-4 pt-4 pb-6">
+    <div class="steps mb-4" id="steps-general"></div>
+    <div id="general-body" class="space-y-4"></div>
+  </div>
+  <div class="sticky bottom-0 bg-white/90 backdrop-blur-xl px-4 py-3 shadow-[0_-6px_24px_rgba(0,0,0,.06)] rounded-t-3xl" style="padding-bottom:calc(12px + env(safe-area-inset-bottom))">
+    <div class="max-w-3xl mx-auto flex items-center gap-3">
+      <button class="btn btn-ghost" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span> Atrás</button>
+      <button class="btn btn-primary flex-1" onclick="nextGenerales()">Siguiente <span class="material-symbols-outlined text-[20px]">arrow_forward</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. FORMULARIO ============ -->
+<section id="v-form" class="view hidden">
+  <div class="max-w-3xl mx-auto px-4 pt-4 pb-44">
+    <div class="steps mb-4" id="steps-form"></div>
+    <div id="form-body" class="space-y-4"></div>
+  </div>
+</section>
+
+<!-- ============ 5. LISTO ============ -->
+<section id="v-done" class="view hidden">
+  <div class="max-w-xl mx-auto px-4 pt-10 pb-16 text-center">
+    <div id="done-ico" class="w-24 h-24 mx-auto rounded-full bg-sage-light text-secondary grid place-items-center floaty"><span class="material-symbols-outlined fill text-[56px]">check_circle</span></div>
+    <h2 id="done-title" class="mt-5 text-[28px] font-bold leading-9">¡Registro guardado!</h2>
+    <p id="done-text" class="mt-2 font-body-lg text-body-lg text-text-secondary"></p>
+    <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream-surface font-mono text-sm font-bold text-text-primary"><span class="material-symbols-outlined text-[18px] text-primary">tag</span><span id="done-code"></span></div>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+      <button class="btn btn-primary" onclick="again()"><span class="material-symbols-outlined text-[20px]">add_circle</span> Otro registro igual</button>
+      <button class="btn btn-ghost" onclick="goHome()"><span class="material-symbols-outlined text-[20px]">home</span> Inicio</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ DOCK (audio / foto / enviar) ============ -->
+<div id="dock" class="dock hidden">
+  <div class="max-w-3xl mx-auto">
+    <div id="rec-ui" class="hidden items-center gap-3 mb-2 px-3 py-2 rounded-2xl bg-red-50">
+      <div id="wave" class="wave"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="flex-1 min-w-0"><p class="text-[12px] font-bold text-alert-high-risk leading-none">GRABANDO · <span id="rec-tag">General</span></p><p id="rec-time" class="font-mono text-[20px] font-bold leading-6">00:00</p></div>
+      <button id="rec-pause" class="w-10 h-10 rounded-full bg-white grid place-items-center text-text-primary shadow" onclick="pauseRec()" aria-label="Pausar"><span class="material-symbols-outlined">pause</span></button>
+      <button class="w-10 h-10 rounded-full bg-alert-high-risk grid place-items-center text-white shadow" onclick="stopRec()" aria-label="Detener"><span class="material-symbols-outlined fill">stop</span></button>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="ringp" id="ring" style="--v:0"><span id="ring-t">0%</span></div>
+      <button id="fab-rec" class="fab fab-rec" onclick="toggleRec('general')" aria-label="Grabar audio"><span class="material-symbols-outlined fill">mic</span></button>
+      <button id="fab-cam" class="fab fab-cam" onclick="takePhoto('general')" aria-label="Tomar foto"><span class="material-symbols-outlined fill">photo_camera</span></button>
+      <button id="fab-media" class="max-[399px]:hidden shrink-0 whitespace-nowrap text-[12px] font-bold text-text-secondary px-1 leading-tight text-left" onclick="document.getElementById('media-sec')?.scrollIntoView({behavior:'smooth'})"><span id="dock-media">0 audios<br>0 fotos</span></button>
+      <button id="dock-next" class="btn btn-primary flex-1 min-w-0 !px-3" onclick="nextForm()"><span id="dock-next-ico" class="material-symbols-outlined text-[20px]">send</span> <span id="dock-next-t">Finalizar</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- entradas ocultas -->
+<input id="in-photo" type="file" accept="image/*" capture="environment" class="hidden"/>
+<input id="in-attach" type="file" accept="image/*,audio/*" multiple class="hidden"/>
+<input id="in-audio" type="file" accept="audio/*" capture class="hidden"/>
+<div id="modals"></div>
+
+<script>
+/* =====================================================================
+   CONFIGURACIÓN
+   ===================================================================== */
+const DEFAULT_URL = '';    // completar con la URL /exec de la aplicación web de Apps Script (Producto 2)
+const DEFAULT_TOKEN = '';  // clave de recolección del equipo de campo
+const CFG = {
+  titulo: 'Estudio de mercado a nivel regional del café de la Cooperativa Huasimal, San Miguel de El Faique, Piura 2026',
+  objetivo: 'identificar oportunidades comerciales y proponer estrategias viables para fortalecer la comercialización del café de la Cooperativa Huasimal de La Capilla',
+  institucion: 'Centro de Investigación y Promoción del Campesinado (CIPCA)',
+  proyecto: 'Fortalecimiento de la agricultura familiar de base agroecológica y enfoque de economía social y solidaria, en el corredor del Alto Piura',
+  equipo: ['Denis Javier García Cortez (consultor responsable)', 'Demetrio Javier Aponte Elera (personal de apoyo)', 'Waldir Ramírez Nima (personal de apoyo)'],
+  supervision: 'Luz Suyon (CIPCA)',
+  investigadoras: ['Denis Javier García Cortez', 'Demetrio Javier Aponte Elera', 'Waldir Ramírez Nima', 'Encuestador/a local 1', 'Encuestador/a local 2'],  // personas que aplican los instrumentos
+  emailEquipo: '',   // completar: correo de contacto del consultor responsable
+  minutosEncuesta: 25,
+  minutosEntrevista: 45
+};
+
+/* =====================================================================
+   INSTRUMENTOS (propuesta técnica, anexos 1 a 5)
+   ===================================================================== */
+const S1 = (arr) => arr.map(o => typeof o === 'string' ? { v: o } : o);
+const OTRO = (t = 'Otro') => ({ v: 'Otro', label: t, otro: true, icon: 'edit' });
+const QQ = ['Menos de 5 qq', '5 a 10 qq', '11 a 20 qq', '21 a 40 qq', 'Más de 40 qq'];
+
+const ENCUESTAS = {
+  barreras: {
+    id: 'barreras', hoja: 'Enc_Oferta', icon: 'agriculture',
+    titulo: 'Cuestionario 1. Oferta, producción y poscosecha',
+    corto: 'Oferta, producción y poscosecha',
+    desc: '15 preguntas sobre superficie, volumen, variedades, manejo, secado, calidad y costos.',
+    instrucciones: 'Le haremos preguntas sobre su cafetal y la cosecha de la última campaña. No hay respuestas buenas ni malas; responda según su experiencia.',
+    ctrl: [],
+    filtros: [{ id: 'prod', label: 'Producción', icon: 'agriculture' }, { id: 'pos', label: 'Poscosecha y calidad', icon: 'wb_sunny' }],
+    secciones: [
+      { id: 's1', titulo: 'A. Producción', icon: 'agriculture', preguntas: [
+        { id: 'ha', dim: 'prod', cat: 'Superficie', col: 'Hectáreas en producción', texto: '¿Cuántas hectáreas de café tiene en producción?', tipo: 'single', opc: S1(['Menos de 0.5 ha', '0.5 a 1 ha', '1.1 a 2 ha', 'Más de 2 ha']) },
+        { id: 'crec', dim: 'prod', cat: 'Superficie', col: 'Café en crecimiento', texto: '¿Tiene café en crecimiento, que todavía no produce?', tipo: 'single', opc: S1(['No', 'Sí, menos de 0.5 ha', 'Sí, 0.5 ha o más']) },
+        { id: 'var', dim: 'prod', cat: 'Variedades', col: 'Variedades', texto: '¿Qué variedades de café siembra? (puede marcar más de una)', tipo: 'multi', opc: S1(['Típica', 'Caturra', 'Catimor', 'Bourbon', 'Pache', 'Geisha', OTRO()]) },
+        { id: 'asoc', dim: 'prod', cat: 'Sistema agroecológico', col: 'Cultivos asociados', texto: '¿Con qué cultivos asocia su café? (puede marcar más de una)', tipo: 'multi', opc: S1(['Naranja', 'Plátano', 'Árboles de sombra (guaba, pacae)', 'Ninguno', OTRO()]) },
+        { id: 'qq', dim: 'prod', cat: 'Volumen', col: 'Quintales cosechados', texto: '¿Cuántos quintales de café pergamino cosechó en la última campaña?', tipo: 'single', opc: S1(QQ) },
+        { id: 'meses', dim: 'prod', cat: 'Estacionalidad', col: 'Meses de cosecha', texto: '¿En qué meses cosecha la mayor parte de su café? (puede marcar más de una)', tipo: 'multi', opc: S1(['Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre', 'Otro mes']) },
+        { id: 'abono', dim: 'prod', cat: 'Manejo', col: 'Tipo de abono', texto: '¿Qué tipo de abono usa en su cafetal?', tipo: 'single', opc: S1(['Orgánico (compost, guano)', 'Químico', 'Ambos', 'No abona']) },
+        { id: 'cert', dim: 'prod', cat: 'Certificación', col: 'Certificación', texto: '¿Su café tiene certificación orgánica o de comercio justo?', tipo: 'single', opc: S1(['Sí, orgánica', 'Sí, comercio justo', 'Ambas', 'En proceso', 'No', 'No sabe']) }
+      ] },
+      { id: 's2', titulo: 'B. Poscosecha y calidad', icon: 'wb_sunny', preguntas: [
+        { id: 'benef', dim: 'pos', cat: 'Beneficio húmedo', col: 'Lugar de despulpado', texto: '¿Dónde despulpa y fermenta su café?', tipo: 'single', opc: S1(['En mi casa, con despulpadora propia', 'Con despulpadora prestada o alquilada', 'En un módulo de la cooperativa', OTRO()]) },
+        { id: 'ferm', dim: 'pos', cat: 'Beneficio húmedo', col: 'Horas de fermentación', texto: '¿Cuántas horas fermenta el café antes de lavarlo?', tipo: 'single', opc: S1(['Menos de 12 horas', '12 a 24 horas', 'Más de 24 horas', 'No controla el tiempo']) },
+        { id: 'secado', dim: 'pos', cat: 'Secado', col: 'Lugar de secado', texto: '¿Dónde seca su café? (puede marcar más de una)', tipo: 'multi', opc: S1(['Sobre plástico en el suelo', 'Sobre el suelo o el patio', 'Tendal o mesa elevada', 'Marquesina o secador solar', OTRO()]) },
+        { id: 'hum', dim: 'pos', cat: 'Secado', col: 'Control de humedad', texto: '¿Cómo sabe que el café ya está seco?', tipo: 'single', opc: S1(['Lo muerde o lo frota en la mano', 'Por el sonido o el color', 'Con un medidor de humedad', 'Se lo dice el comprador']) },
+        { id: 'selec', dim: 'pos', cat: 'Calidad', col: 'Separa por calidad', texto: '¿Separa su café por calidad antes de venderlo?', tipo: 'single', opc: S1(['Siempre', 'A veces', 'Nunca']) },
+        { id: 'almac', dim: 'pos', cat: 'Almacenamiento', col: 'Lugar de almacenamiento', texto: '¿Dónde guarda el café antes de venderlo?', tipo: 'single', opc: S1(['En sacos dentro de la casa', 'En un almacén ventilado', 'En la cooperativa', 'Lo vende apenas seca']) },
+        { id: 'costo', dim: 'pos', cat: 'Costos', col: 'Costo por quintal', texto: '¿Cuánto le cuesta producir un quintal de café pergamino (mano de obra, abono y cosecha)?', tipo: 'single', opc: S1(['Menos de S/ 300', 'S/ 300 a 500', 'S/ 501 a 700', 'Más de S/ 700', 'No sabe']) }
+      ] }
+    ]
+  },
+  parto: {
+    id: 'parto', hoja: 'Enc_Comercializacion', icon: 'storefront',
+    titulo: 'Cuestionario 2. Comercialización, organización y género',
+    corto: 'Comercialización, organización y género',
+    desc: '16 preguntas sobre compradores, precios, pago, dificultades, cooperativa, marca y roles de mujeres y hombres.',
+    instrucciones: 'Ahora le preguntaremos cómo vende su café, a quién y a qué precio, y quién participa en cada labor dentro de su familia. La información es anónima y confidencial.',
+    ctrl: [],
+    filtros: [{ id: 'ven', label: 'Venta y precios', icon: 'payments' }, { id: 'org', label: 'Organización y marca', icon: 'groups' }, { id: 'gen', label: 'Género', icon: 'diversity_3' }],
+    secciones: [
+      { id: 'A', titulo: 'C. Venta y precios', icon: 'payments', preguntas: [
+        { id: 'aquien', dim: 'ven', cat: 'Canales', col: 'A quién vendió', texto: '¿A quién vendió su café en la última campaña? (puede marcar más de una)', tipo: 'multi', opc: S1(['Intermediario o acopiador local', 'Cooperativa Huasimal', 'Acopiador o empresa de Jaén', 'Otra cooperativa', 'Tostaduría o cafetería', 'Venta directa en feria o mercado', OTRO()]) },
+        { id: 'vendqq', dim: 'ven', cat: 'Volumen', col: 'Quintales vendidos', texto: '¿Cuántos quintales vendió en la última campaña?', tipo: 'single', opc: S1(QQ) },
+        { id: 'precio', dim: 'ven', cat: 'Precios', col: 'Precio por quintal', texto: '¿Cuál fue el precio promedio que recibió por quintal de pergamino seco?', tipo: 'single', opc: S1(['Menos de S/ 700', 'S/ 700 a 800', 'S/ 801 a 900', 'S/ 901 a 1,000', 'Más de S/ 1,000', 'No recuerda']) },
+        { id: 'pres', dim: 'ven', cat: 'Presentación', col: 'Presentación de venta', texto: '¿En qué presentación vende su café? (puede marcar más de una)', tipo: 'multi', opc: S1(['Cerezo (fruto fresco)', 'Pergamino húmedo', 'Pergamino seco', 'Café tostado', 'Café molido']) },
+        { id: 'pago', dim: 'ven', cat: 'Condiciones', col: 'Forma de pago', texto: '¿Cómo le pagan su café?', tipo: 'single', opc: S1(['Al contado, al entregar', 'A los días (crédito)', 'Adelanto antes de la cosecha', 'Mixto']) },
+        { id: 'dif', dim: 'ven', cat: 'Precios', col: 'Pago por calidad', texto: '¿El comprador le pagó más por un café de mejor calidad?', tipo: 'single', opc: S1(['Sí, siempre', 'A veces', 'Nunca', 'No sabe']) },
+        { id: 'flete', dim: 'ven', cat: 'Condiciones', col: 'Costo del flete', texto: '¿Cuánto le cuesta llevar un quintal hasta el comprador?', tipo: 'single', opc: S1(['Nada, el comprador recoge', 'Menos de S/ 10', 'S/ 10 a 20', 'Más de S/ 20']) },
+        { id: 'dific', dim: 'ven', cat: 'Dificultades', col: 'Dificultades para vender', texto: '¿Cuáles son sus principales dificultades para vender mejor? (puede marcar más de una)', tipo: 'multi', opc: S1(['Precio bajo', 'Pocos compradores', 'Lejanía y flete', 'Falta de calidad', 'Necesidad de dinero rápido', 'No conoce otros mercados', OTRO()]) }
+      ] },
+      { id: 'B', titulo: 'D. Organización y marca', icon: 'groups', preguntas: [
+        { id: 'part', dim: 'org', cat: 'Asociatividad', col: 'Participa en organización', texto: '¿Participa en alguna organización de productoras y productores?', tipo: 'single', opc: S1(['Sí, en la Cooperativa Huasimal', 'Sí, en otra organización', 'No']) },
+        { id: 'valora', dim: 'org', cat: 'Servicios', col: 'Servicios valorados', texto: '¿Qué servicios de la cooperativa valora o le gustaría recibir? (puede marcar más de una)', tipo: 'multi', opc: S1(['Acopio y venta conjunta', 'Mejor precio', 'Capacitación técnica', 'Crédito o adelantos', 'Análisis de calidad', 'Marca y promoción']) },
+        { id: 'disp', dim: 'org', cat: 'Asociatividad', col: 'Disposición a vender por la cooperativa', texto: '¿Vendería su café a través de la cooperativa si le pagan según la calidad?', tipo: 'single', opc: S1(['Sí', 'Tal vez', 'No']) },
+        { id: 'marca', dim: 'org', cat: 'Marca', col: 'Conoce la marca', texto: '¿Conoce la marca de café de la Cooperativa Huasimal?', tipo: 'single', opc: S1(['Sí, y la ha comprado o vendido', 'Sí, solo la conoce', 'No']) }
+      ] },
+      { id: 'C', titulo: 'E. Mujeres y hombres en el café', icon: 'diversity_3', preguntas: [
+        { id: 'labor', dim: 'gen', cat: 'Roles', col: 'Quién cosecha y seca', texto: 'En su familia, ¿quién realiza principalmente la cosecha y el secado?', tipo: 'single', opc: S1(['Principalmente mujeres', 'Principalmente hombres', 'Mujeres y hombres por igual', 'Personal contratado']) },
+        { id: 'decide', dim: 'gen', cat: 'Decisiones', col: 'Quién decide la venta', texto: '¿Quién decide a quién y a qué precio se vende el café?', tipo: 'single', opc: S1(['El hombre', 'La mujer', 'Ambos', 'Otro familiar']) },
+        { id: 'recibe', dim: 'gen', cat: 'Control del ingreso', col: 'Quién administra el ingreso', texto: '¿Quién recibe y administra el dinero de la venta?', tipo: 'single', opc: S1(['El hombre', 'La mujer', 'Ambos']) },
+        { id: 'capac', dim: 'gen', cat: 'Capacitación', col: 'Quién se capacitó', texto: 'En los últimos 2 años, ¿quiénes de su familia recibieron capacitación en café?', tipo: 'single', opc: S1(['Solo hombres', 'Solo mujeres', 'Mujeres y hombres', 'Nadie']) }
+      ] }
+    ]
+  }
+};
+const CASERIOS = ['La Capilla', 'El Higuerón', 'Ñangay', 'Pizarrume', 'Quitaguajara', 'Chamelico', 'La Tuna', 'El Tambo', 'Otro'];
+const GENERALES = [
+  { id: 'caserio', col: 'Caserío', label: 'Caserío', tipo: 'chips', req: true, opc: CASERIOS, icon: 'location_on' },
+  { id: 'sexo', col: 'Sexo', label: 'Sexo de la persona entrevistada', tipo: 'chips', req: true, opc: ['Mujer', 'Hombre'], icon: 'wc' },
+  { id: 'edad', col: 'Edad', label: 'Edad (años)', tipo: 'number', req: true, min: 18, max: 95, ph: 'Ej. 45', icon: 'cake' },
+  { id: 'condicion', col: 'Condición', label: 'Condición en la cooperativa', tipo: 'chips', req: true, opc: ['Socio/a', 'No socio/a'], icon: 'badge' },
+  { id: 'trim', col: 'Años como socio/a', label: 'Socio/a: ¿cuántos años tiene en la cooperativa?', tipo: 'chips', req: true, opc: ['Menos de 2 años', '2 a 5 años', 'Más de 5 años'], si: 'gestante', icon: 'calendar_month' },
+  { id: 'meses', col: 'Interés en asociarse', label: 'No socio/a: ¿le interesaría vender por la cooperativa?', tipo: 'chips', req: true, opc: ['Sí', 'Tal vez', 'No'], si: 'puerpera', icon: 'handshake' }
+];
+const DIRIGIDO_ENC = {
+  gestante: { label: 'Socio/a', plural: 'Socios y socias', icon: 'groups', meta: 39, desc: 'Censo de los 39 socios y socias de la Cooperativa Huasimal.' },
+  puerpera: { label: 'No socio/a', plural: 'No socios y no socias', icon: 'person', meta: 77, desc: 'Muestra estratificada de familias productoras de los 7 caseríos.' }
+};
+const CATEG_ENT = {
+  compradores: { label: 'Compradores', icon: 'storefront', desc: 'Acopiadores, tostadurías, cafeterías, cooperativas y exportadoras.' },
+  productores: { label: 'Productores y productoras', icon: 'groups', desc: 'Grupos focales diferenciados de mujeres y de hombres.' },
+  instituciones: { label: 'Actores clave', icon: 'account_balance', desc: 'Directivos de Huasimal, municipalidad, Agencia Agraria y CIPCA.' }
+};
+const Q = (col, texto) => ({ col, texto, tipo: 'nota' });
+const ENTREVISTAS = {
+  A: { id: 'A', cat: 'compradores', icon: 'local_shipping', hoja: 'Ent_A_Acopiadores', titulo: 'Acopiadores e intermediarios',
+    objetivo: 'Conocer volúmenes, precios, exigencias y condiciones de compra del canal que hoy recibe la mayor parte del café.',
+    cantidad: '3 a 4 personas', perfil: 'Acopiadores que compran café en San Miguel de El Faique, Canchaque o Huancabamba.',
+    elegib: ['Compra café en la zona hace al menos 1 campaña', 'Acepta participar de forma voluntaria'],
+    ctrl: [{ id: 'volumen', col: 'Volumen anual (qq)', label: 'Volumen que compra al año (qq, aprox.)', tipo: 'number', min: 0, max: 100000, ph: 'Ej. 800', icon: 'inventory_2' }],
+    preguntas: [
+      Q('Volumen, meses y zonas de compra', '¿Cuántos quintales compra al año, en qué meses y en qué caseríos?'),
+      Q('A quién vende el café', '¿A quién vende después el café que compra (Jaén, Piura, exportadoras)?'),
+      Q('Cómo fija el precio', '¿Cómo fija el precio que paga al productor? ¿Sigue algún precio de referencia?'),
+      Q('Castigos y premios por calidad', '¿Qué defectos castiga y qué características premia en el precio?'),
+      Q('Condiciones de pago y adelantos', '¿Paga al contado, da adelantos o créditos a las productoras y productores?'),
+      Q('Relación con la cooperativa', '¿Cómo ve a la Cooperativa Huasimal? ¿Compraría café acopiado por ella?')
+    ] },
+  B: { id: 'B', cat: 'compradores', icon: 'coffee', hoja: 'Ent_B_Tostadurias', titulo: 'Tostadurías y cafeterías',
+    objetivo: 'Identificar la demanda regional de café diferenciado, los requisitos de calidad y la disposición a comprar a Huasimal.',
+    cantidad: '5 a 6 negocios', perfil: 'Tostadurías, cafeterías de especialidad y tiendas de productos naturales de Piura y Sullana.',
+    elegib: ['Compra o vende café tostado en Piura o Sullana'],
+    ctrl: [{ id: 'giro', col: 'Giro del negocio', label: 'Tipo de negocio', tipo: 'chips', opc: ['Tostaduría', 'Cafetería', 'Tienda o supermercado', 'Otro'], icon: 'storefront' }],
+    preguntas: [
+      Q('Origen y volumen del café', '¿De dónde viene el café que usa o vende y cuántos kilos compra al mes?'),
+      Q('Presentación y calidad exigida', '¿En qué presentación lo compra (pergamino, verde u oro, tostado) y qué calidad o puntaje en taza exige?'),
+      Q('Precio que paga', '¿Qué precio paga por kilo o por quintal? ¿Paga más por origen, orgánico o calidad?'),
+      Q('Condiciones de compra', '¿Qué volúmenes mínimos, frecuencia de entrega, comprobantes y formas de pago maneja?'),
+      Q('Interés en origen local', '¿Sus clientes valoran un café de origen piurano con identidad? ¿Por qué?'),
+      Q('Disposición a comprar a Huasimal', '¿Compraría café de la Cooperativa Huasimal? ¿Bajo qué condiciones?')
+    ] },
+  C: { id: 'C', cat: 'compradores', icon: 'warehouse', hoja: 'Ent_C_Cooperativas', titulo: 'Cooperativas y exportadoras',
+    objetivo: 'Conocer los precios de referencia, los estándares de exportación y las posibilidades de alianza comercial.',
+    cantidad: '2 a 3 organizaciones', perfil: 'Cooperativas y empresas exportadoras de Piura y del eje Jaén–San Ignacio (contactos de las visitas comerciales de CIPCA).',
+    elegib: ['Compra o exporta café de pequeñas productoras y productores'],
+    ctrl: [{ id: 'tipo', col: 'Tipo de organización', label: 'Tipo de organización', tipo: 'chips', opc: ['Cooperativa', 'Empresa exportadora', 'Otro'], icon: 'warehouse' }],
+    preguntas: [
+      Q('Volumen y origen de compras', '¿Cuánto café compra a organizaciones de productoras y productores y de qué zonas?'),
+      Q('Estándares de calidad', '¿Qué estándares de humedad, rendimiento, defectos y taza exige?'),
+      Q('Precio y diferenciales', '¿Cómo calcula el precio (bolsa de Nueva York más diferencial)? ¿Qué premios paga?'),
+      Q('Certificaciones requeridas', '¿Qué certificaciones pide o valora (orgánica, comercio justo)?'),
+      Q('Experiencia con organizaciones pequeñas', '¿Qué ha funcionado y qué no al comprar a organizaciones pequeñas?'),
+      Q('Alianza con Huasimal', '¿Bajo qué condiciones haría un contrato de compra con la Cooperativa Huasimal?')
+    ] },
+  D: { id: 'D', cat: 'productores', icon: 'groups', hoja: 'Ent_D_GrupoFocal', titulo: 'Grupo focal de productoras o de productores',
+    objetivo: 'Profundizar en roles, decisiones, control del ingreso, barreras y expectativas comerciales, por separado entre mujeres y hombres.',
+    cantidad: '4 grupos (2 de mujeres y 2 de hombres) de 6 a 10 personas', perfil: 'Socias, socios y familias no socias de los 7 caseríos y de La Capilla.',
+    elegib: ['Productor o productora de café del distrito', 'Mayor de 18 años'],
+    ctrl: [{ id: 'grupo', col: 'Tipo de grupo', label: 'Tipo de grupo focal', tipo: 'chips', opc: ['Mujeres', 'Hombres'], icon: 'diversity_3' },
+           { id: 'asist', col: 'N.° de participantes', label: 'Número de participantes', tipo: 'number', min: 3, max: 15, ph: 'Ej. 8', icon: 'group' }],
+    preguntas: [
+      Q('Calendario de labores', '¿Quién hace cada labor del café y en qué meses? (vivero, cosecha, despulpado, secado, venta)'),
+      Q('Quién decide y quién recibe el dinero', '¿Quién decide a quién y cuándo vender? ¿Quién recibe el dinero y en qué se usa?'),
+      Q('Dificultades para vender mejor', '¿Qué dificultades tienen para vender mejor su café?'),
+      Q('Expectativas sobre la cooperativa', '¿Qué cambiaría si vendieran su café a través de la cooperativa?'),
+      Q('Historia de cambio', 'Cuéntenos una venta de la que se sienta orgulloso u orgullosa: ¿qué hizo diferente?')
+    ] },
+  E: { id: 'E', cat: 'instituciones', icon: 'account_balance', hoja: 'Ent_E_ActoresClave', titulo: 'Directivos e instituciones',
+    objetivo: 'Conocer las capacidades organizativas y comerciales de la cooperativa, su marca y el apoyo público disponible.',
+    cantidad: '5 a 6 personas', perfil: 'Consejo directivo de Huasimal, municipalidad distrital, Agencia Agraria y equipo de CIPCA.',
+    elegib: ['Cumple un cargo directivo o técnico vinculado al café'],
+    ctrl: [{ id: 'cargo', col: 'Cargo', label: 'Cargo o institución', tipo: 'chips', opc: ['Directivo/a de Huasimal', 'Municipalidad', 'Agencia Agraria', 'CIPCA', 'Otro'], icon: 'badge' }],
+    preguntas: [
+      Q('Capacidad de acopio y gestión', '¿Con qué infraestructura, capital de trabajo y personal cuenta la cooperativa para acopiar y vender?'),
+      Q('Experiencias de venta conjunta', '¿Qué ventas conjuntas ha hecho la cooperativa y qué resultados tuvieron?'),
+      Q('Marca de la cooperativa', '¿Cómo nació la marca, dónde se vende y qué falta para posicionarla?'),
+      Q('Apoyo público y alianzas', '¿Qué programas públicos o aliados pueden apoyar la comercialización (Procompite, Agroideas, municipalidad)?'),
+      Q('Participación de las mujeres', '¿Cómo participan las socias en la directiva y en las decisiones comerciales?')
+    ] }
+};
+
+// Todas las guías comparten estos datos de control
+Object.values(ENTREVISTAS).forEach(g => {
+  g.ctrl = [{ id: 'caserio', col: 'Lugar', label: 'Ciudad, distrito o caserío', tipo: 'text', req: true, ph: 'Ej. Piura', icon: 'location_on' }, ...g.ctrl];
+  g.ctrl.push({ id: 'edad', col: 'Edad', label: 'Edad (opcional)', tipo: 'number', min: 18, max: 99, ph: 'Ej. 34', icon: 'cake' });
+  g.secciones = [{ id: 'g', titulo: 'Guía de entrevista', icon: 'forum', preguntas: g.preguntas.map((p, i) => ({ ...p, id: 'q' + (i + 1) })) }];
+  g.filtros = [{ id: 'evid', label: 'Con audio/foto', icon: 'perm_media' }];
+  g.instrucciones = g.objetivo;
+});
+
+/* =====================================================================
+   UTILIDADES
+   ===================================================================== */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const ic = (n, c = '') => `<span class="material-symbols-outlined ${c}">${n}</span>`;
+const LS = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { } } };
+const uid = () => Math.random().toString(36).slice(2, 10);
+const pad = n => String(n).padStart(2, '0');
+const fmtTime = s => `${pad(Math.floor(s / 60))}:${pad(Math.floor(s % 60))}`;
+const kb = n => n > 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB';
+const conf = () => { const c = Object.assign({ url: DEFAULT_URL, token: DEFAULT_TOKEN, invNombre: '' }, LS.get('ch_cfg', {})); c.url = DEFAULT_URL; c.token = DEFAULT_TOKEN; return c; };
+const blobToB64 = b => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1]); r.onerror = rej; r.readAsDataURL(b); });
+const EXT = { 'audio/webm': 'webm', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4a', 'audio/ogg': 'ogg', 'audio/mpeg': 'mp3', 'audio/wav': 'wav', 'audio/aac': 'aac', 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/heic': 'heic' };
+const baseMime = m => String(m || '').split(';')[0];
+
+function toast(msg, kind = '', icon = '') {
+  const el = document.createElement('div');
+  el.className = 'toast ' + kind;
+  el.innerHTML = (icon ? ic(icon, 'text-[20px]') : '') + `<span>${esc(msg)}</span>`;
+  $('#toasts').appendChild(el);
+  setTimeout(() => { el.style.transition = '.3s'; el.style.opacity = 0; setTimeout(() => el.remove(), 300); }, 3200);
+}
+function confirmBox({ title, text, ok = 'Aceptar', cancel = 'Cancelar', icon = 'help', danger = false }) {
+  return new Promise(res => {
+    const m = document.createElement('div');
+    m.className = 'overlay';
+    m.innerHTML = `<div class="sheet text-center"><div class="w-16 h-16 mx-auto rounded-full ${danger ? 'bg-red-100 text-alert-high-risk' : 'bg-coral-soft text-primary'} grid place-items-center">${ic(icon, 'text-[34px]')}</div>
+      <h3 class="mt-3 text-[20px] font-bold">${esc(title)}</h3><p class="mt-1 text-text-secondary">${esc(text)}</p>
+      <div class="mt-5 flex gap-3"><button class="btn btn-ghost flex-1" data-r="0">${esc(cancel)}</button><button class="btn ${danger ? 'btn-danger' : 'btn-primary'} flex-1" data-r="1">${esc(ok)}</button></div></div>`;
+    m.addEventListener('click', e => { const b = e.target.closest('[data-r]'); if (b || e.target === m) { m.remove(); res(b ? b.dataset.r === '1' : false); } });
+    document.body.appendChild(m);
+  });
+}
+function confetti() {
+  const cols = ['#C8892B', '#1B7A3E', '#7B4A2A', '#CDEBD6', '#4A2C1A', '#F3C77A'];
+  for (let i = 0; i < 40; i++) {
+    const c = document.createElement('i');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.background = cols[i % cols.length];
+    c.style.animationDuration = 2 + Math.random() * 2.2 + 's';
+    c.style.animationDelay = Math.random() * .6 + 's';
+    c.style.borderRadius = Math.random() > .5 ? '50%' : '2px';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 5200);
+  }
+}
+
+/* =====================================================================
+   BASE LOCAL (IndexedDB): borrador y cola de envío
+   ===================================================================== */
+const DB = {
+  _db: null,
+  open() {
+    if (this._db) return Promise.resolve(this._db);
+    return new Promise((res, rej) => {
+      const r = indexedDB.open('cafe-huasimal', 1);
+      r.onupgradeneeded = () => { r.result.createObjectStore('borrador', { keyPath: 'k' }); r.result.createObjectStore('cola', { keyPath: 'id' }); };
+      r.onsuccess = () => { this._db = r.result; res(r.result); };
+      r.onerror = () => rej(r.error);
+    });
+  },
+  async tx(store, mode, fn) { const db = await this.open(); return new Promise((res, rej) => { const t = db.transaction(store, mode); const rq = fn(t.objectStore(store)); t.oncomplete = () => res(rq && rq.result); t.onerror = () => rej(t.error); }); },
+  put(s, v) { return this.tx(s, 'readwrite', o => o.put(v)); },
+  get(s, k) { return this.tx(s, 'readonly', o => o.get(k)); },
+  del(s, k) { return this.tx(s, 'readwrite', o => o.delete(k)); },
+  all(s) { return this.tx(s, 'readonly', o => o.getAll()); }
+};
+
+/* =====================================================================
+   ESTADO
+   ===================================================================== */
+let S = null;            // sesión de registro activa
+let view = 'home';
+let sel = { mode: null, tipo: null, dirigido: null, tab: 1, cat: 'todos', q: '' };
+
+const inst = () => S.mode === 'encuesta' ? (ENCUESTAS[S.tipo] || null) : ENTREVISTAS[S.tipo];
+const dirigidoLabel = () => S.mode === 'encuesta' ? (S.dirigido ? DIRIGIDO_ENC[S.dirigido].label : 'Productores y productoras') : ENTREVISTAS[S.tipo].titulo;
+function newSession(mode, tipo, dirigido) {
+  const d = new Date();
+  const code = (mode === 'encuesta' ? 'ENC' : 'ENT') + '-' + String(d.getFullYear()).slice(2) + pad(d.getMonth() + 1) + pad(d.getDate()) + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
+  S = { id: code, mode, tipo, dirigido, inicio: d.toISOString(), consent: { acepta: null, audio: false, foto: false, sinFirma: false, nombre: '', dni: '', testigo: '', testigoDni: '', firma: '', invNombre: conf().invNombre, elegib: [] }, ctrl: {}, resp: {}, notas: '', media: [], filtro: 'todas', view: 'consent' };
+}
+const flat = () => inst().secciones.flatMap(s => s.preguntas);
+const qNum = q => flat().indexOf(q) + 1;
+const qText = q => typeof q.texto === 'object' ? (q.texto[S.dirigido] || q.texto.both) : q.texto;
+
+/* =====================================================================
+   NAVEGACIÓN
+   ===================================================================== */
+const VIEWS = ['home', 'select', 'consent', 'general', 'form', 'done'];
+function go(v, push = true) {
+  view = v;
+  VIEWS.forEach(x => $('#v-' + x).classList.toggle('hidden', x !== v));
+  $('#dock').classList.toggle('hidden', v !== 'form');
+  window.scrollTo({ top: 0 });
+  if (push) history.pushState({ v }, '', '#' + v);
+  if (S && (v === 'consent' || v === 'form' || v === 'general')) { S.view = v; saveDraftSoon(); }
+  if (v === 'home') refreshHome();
+}
+window.addEventListener('popstate', e => {
+  const v = (e.state && e.state.v) || 'home';
+  if (view === 'form' && Rec.mr) stopRec();
+  if (v === 'consent' && S) return go('consent', false), renderConsent();
+  if (v === 'general' && S) return go('general', false), renderGenerales();
+  if (v === 'form' && S) { if (S.mode === 'encuesta' && e.state && e.state.t) S.tipo = e.state.t; return go('form', false), renderForm(); }
+  if (v === 'select') return go('select', false);
+  go(v === 'done' ? 'home' : v, false);
+});
+function goHome() { S = null; history.pushState({ v: 'home' }, '', '#home'); go('home', false); }
+window.goHome = goHome;
+
+/* =====================================================================
+   INICIO
+   ===================================================================== */
+async function refreshHome() {
+  let d = null;
+  try { d = await DB.get('borrador', 'actual'); } catch { }
+  const b = $('#draft-banner');
+  if (d && d.S) {
+    const i = d.S.mode === 'encuesta' ? ENCUESTAS[d.S.tipo] : ENTREVISTAS[d.S.tipo];
+    $('#draft-info').textContent = `${d.S.mode === 'encuesta' ? 'Encuesta' : 'Entrevista'} · ${d.S.mode === 'encuesta' ? 'encuesta en curso' : (i.corto || i.titulo)} · ${d.S.id}`;
+    b.classList.remove('hidden');
+  } else b.classList.add('hidden');
+  refreshPend();
+}
+async function resumeDraft() {
+  const d = await DB.get('borrador', 'actual');
+  if (!d) return;
+  S = d.S; S.media = (d.media || []);
+  history.pushState({ v: S.view, t: S.tipo }, '', '#' + S.view);
+  if (S.view === 'form' && inst()) { go('form', false); renderForm(); } else if (S.view === 'general') { go('general', false); renderGenerales(); } else { go('consent', false); renderConsent(); }
+}
+async function discardDraft() {
+  if (!await confirmBox({ title: '¿Descartar borrador?', text: 'Se perderán las respuestas y grabaciones de este registro.', ok: 'Descartar', danger: true, icon: 'delete' })) return;
+  await DB.del('borrador', 'actual'); refreshHome();
+}
+window.resumeDraft = resumeDraft; window.discardDraft = discardDraft;
+
+/* =====================================================================
+   SELECCIÓN (tipo + dirigido a)
+   ===================================================================== */
+const counts = () => LS.get('wk_cnt', {});
+function bump(key) { const c = counts(); c[key] = (c[key] || 0) + 1; LS.set('wk_cnt', c); }
+
+function openSelect(mode) {
+  sel = { mode, tipo: null, dirigido: null, tab: 1, cat: 'todos', q: '' };
+  const enc = mode === 'encuesta';
+  $('#sel-head').innerHTML = `<div class="w-14 h-14 rounded-2xl ${enc ? 'bg-coral-soft text-primary' : 'bg-sage-light text-secondary'} grid place-items-center">${ic(enc ? 'fact_check' : 'record_voice_over', 'text-[30px] fill')}</div>
+    <div><h2 class="text-[24px] font-bold leading-8">${enc ? 'Encuesta' : 'Entrevista'}</h2><p class="text-text-secondary text-[14px]">${enc ? 'Toque el cuestionario que va a aplicar a la participante.' : 'Elija el tipo de informante y el grupo de la guía.'}</p></div>`;
+  $('#sel-tabs').classList.toggle('hidden', enc); $('#sel-bar').classList.toggle('hidden', enc);
+  $('#steps-select').classList.toggle('hidden', !enc); if (enc) $('#steps-select').innerHTML = stepsHTML(2);
+  history.pushState({ v: 'select' }, '', '#select');
+  go('select', false); renderSelect();
+}
+function setTab(n) { sel.tab = n; renderSelect(); }
+function renderSelect() {
+  $('#tab-1').classList.toggle('on', sel.tab === 1);
+  $('#tab-2').classList.toggle('on', sel.tab === 2);
+  $('#tab-2').disabled = !sel.tipo;
+  const p = $('#sel-panel'); const enc = sel.mode === 'encuesta';
+  let h = '';
+  if (sel.tab === 1) {
+    if (enc) {
+      h = Object.values(ENCUESTAS).map(e => `<button class="pick" onclick="openEncuesta('${e.id}')"><div class="flex items-center gap-3">
+        <div class="w-14 h-14 rounded-2xl bg-coral-soft text-primary grid place-items-center shrink-0">${ic(e.icon, 'text-[30px]')}</div>
+        <div class="flex-1 min-w-0"><span class="inline-block px-2 py-0.5 rounded-full bg-cream-surface text-[11px] font-bold text-text-secondary mb-1">Encuesta · Para productores y productoras</span><h3 class="text-[17px] font-bold leading-6">${esc(e.titulo)}</h3><p class="mt-1 text-[14px] text-text-secondary">${esc(e.desc)}</p></div>
+        ${ic('arrow_forward', 'text-primary shrink-0')}</div></button>`).join('');
+    } else {
+      h = Object.entries(CATEG_ENT).map(([k, c]) => `<button class="pick ${sel.tipo === k ? 'on' : ''}" onclick="pickTipo('${k}')"><div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-sage-light text-secondary grid place-items-center shrink-0">${ic(c.icon, 'text-[26px]')}</div>
+        <div class="flex-1"><h3 class="text-[17px] font-bold">${c.label}</h3><p class="text-[14px] text-text-secondary">${c.desc}</p>
+        <div class="mt-2 flex gap-1">${Object.values(ENTREVISTAS).filter(g => g.cat === k).map(g => `<span class="px-2 py-0.5 rounded-full bg-cream-surface text-[11px] font-bold">Grupo ${g.id}</span>`).join('')}</div></div>
+        <span class="tick">${ic('check', 'text-[18px]')}</span></div></button>`).join('');
+    }
+  } else {
+    const cn = counts();
+    // el grupo ya se eligió en el paso 1: solo se muestran sus guías
+    const list = Object.values(ENTREVISTAS).filter(g => g.cat === sel.tipo);
+    h = (list.length ? list.map(g => `<button class="pick ${sel.dirigido === g.id ? 'on' : ''}" onclick="pickDirigido('${g.id}')"><div class="flex items-start gap-3">
+        <div class="w-14 h-14 rounded-2xl bg-sage-light text-secondary grid place-items-center shrink-0 relative">${ic(g.icon, 'text-[28px]')}<b class="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-secondary text-white text-[12px] grid place-items-center">${g.id}</b></div>
+        <div class="flex-1 min-w-0"><h3 class="text-[17px] font-bold leading-6">${g.titulo}</h3><p class="line2 text-[14px] text-text-secondary mt-1">${g.objetivo}</p>
+        <div class="mt-2 flex flex-wrap gap-2"><span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary text-[11px] font-bold">${g.cantidad}</span><span class="px-2 py-0.5 rounded-full bg-cream-surface text-text-secondary text-[11px] font-bold">${g.preguntas.length} preguntas</span><span class="px-2 py-0.5 rounded-full bg-sage-light text-secondary text-[11px] font-bold">En este equipo: ${cn['ent:' + g.id] || 0}</span></div></div>
+        <span class="tick">${ic('check', 'text-[18px]')}</span></div></button>`).join('') : `<div class="text-center py-10 text-text-secondary">${ic('search_off', 'text-[40px]')}<p>Sin resultados</p></div>`);
+  }
+  p.innerHTML = h;
+  // pie
+  const ok = sel.tipo && sel.dirigido;
+  $('#sel-go').disabled = !ok;
+  let sum = 'Elija un grupo';
+  if (sel.tipo && !sel.dirigido) sum = 'Elija a quién va dirigido';
+  if (ok) sum = sel.mode === 'encuesta' ? `${ENCUESTAS[sel.tipo].corto} · ${DIRIGIDO_ENC[sel.dirigido].label}` : `Grupo ${sel.dirigido} · ${ENTREVISTAS[sel.dirigido].titulo}`;
+  $('#sel-sum').textContent = sum;
+}
+function pickTipo(t) {
+  if (sel.tipo !== t) sel.dirigido = null;
+  sel.tipo = t;
+  if (sel.mode === 'entrevista') sel.cat = t;
+  renderSelect();
+  setTimeout(() => setTab(2), 260);
+}
+function pickDirigido(d) { sel.dirigido = d; renderSelect(); }
+Object.assign(window, { setTab, pickTipo, pickDirigido, openSelect, openEncuesta, startEncuesta });
+
+function startEncuesta() {
+  newSession('encuesta', 'barreras', null);
+  history.pushState({ v: 'consent' }, '', '#consent');
+  go('consent', false); renderConsent();
+}
+function openEncuesta(id) {
+  if (!S || S.mode !== 'encuesta') return goHome();
+  if (S.tipo && S.tipo !== id) { S.resp = {}; S.notas = ''; S.filtro = 'todas'; }
+  S.tipo = id;
+  history.pushState({ v: 'form' }, '', '#form');
+  go('form', false); renderForm();
+}
+function goConsent() {
+  if (sel.mode === 'encuesta') newSession('encuesta', sel.tipo, sel.dirigido);
+  else newSession('entrevista', sel.dirigido, null);
+  history.pushState({ v: 'consent' }, '', '#consent');
+  go('consent', false); renderConsent();
+}
+window.goConsent = goConsent;
+
+/* =====================================================================
+   PASOS
+   ===================================================================== */
+function stepsHTML(n) {
+  const names = S && S.mode === 'encuesta' ? ['Consentimiento', 'Datos', 'Oferta', 'Comercio', 'Envío'] : ['Grupo', 'Consentimiento', 'Datos', 'Guía', 'Envío'];
+  return names.map((t, i) => `<div class="step ${i + 1 < n ? 'done' : i + 1 === n ? 'on' : ''}"><i>${i + 1 < n ? ic('check', 'text-[16px]') : i + 1}</i><span class="hidden sm:inline">${t}</span></div>${i < names.length - 1 ? `<div class="step-line ${i + 1 < n ? 'done' : ''}"></div>` : ''}`).join('');
+}
+
+/* =====================================================================
+   CONSENTIMIENTO INFORMADO (Anexo 4 de la tesis)
+   ===================================================================== */
+function consentSections() {
+  const enc = S.mode === 'encuesta';
+  const min = enc ? CFG.minutosEncuesta : CFG.minutosEntrevista;
+  const mail = (e) => e ? ` Correo: ${esc(e)}.` : '';
+  return [
+    ['flag', 'Propósito del estudio', `Le invitamos a participar en el <b>«${esc(CFG.titulo)}»</b>, cuyo objetivo es ${esc(CFG.objetivo)}. El estudio lo encarga el ${esc(CFG.institucion)} en el marco del proyecto «${esc(CFG.proyecto)}», y lo realiza un consultor independiente con su personal de apoyo.<br><br>Conocer cuánto café se produce, a quién se vende, a qué precio y qué exigen los compradores ayudará a la cooperativa y a las familias productoras a vender mejor su café.`],
+    ['list_alt', 'Procedimiento', `Si usted decide participar:<ol class="list-decimal pl-5 mt-1 space-y-1"><li>Se aplicará ${enc ? 'una encuesta' : 'una entrevista'} con preguntas sobre la producción y la venta de café.</li><li>${enc ? 'La encuesta' : 'La entrevista'} durará aproximadamente <b>${min} minutos</b> y se realizará en su casa, su local o un lugar de su comunidad.</li><li>Sus respuestas se identificarán con un código (<b>${esc(S.id)}</b>) y no con su nombre.</li><li>Solo si usted lo autoriza, se grabará el audio o se tomarán fotografías.</li></ol>`],
+    ['front_hand', 'Participación voluntaria', 'Puede hacer todas las preguntas que necesite antes de decidir. Su participación es voluntaria y puede retirarse en cualquier momento, sin ninguna consecuencia.'],
+    ['health_and_safety', 'Riesgos', 'No existen riesgos asociados a su participación. Si alguna pregunta le resulta incómoda, puede no responderla.'],
+    ['volunteer_activism', 'Beneficios', 'No recibirá un pago por participar. Los resultados se compartirán con la cooperativa y con CIPCA, y servirán para elaborar un plan comercial que beneficie a las familias productoras.'],
+    ['lock', 'Confidencialidad', 'La información es confidencial y solo se usará para este estudio. Los precios y volúmenes que usted informe no se compartirán de forma individual con compradores ni con terceros.'],
+    ['contact_support', 'Problemas o preguntas', `Si tiene preguntas, puede comunicarse con el consultor responsable y su personal de apoyo: <b>${esc(CFG.equipo.join(', '))}</b>.${mail(CFG.emailEquipo)} Supervisión del estudio: <b>${esc(CFG.supervision)}</b>.`]
+  ];
+}
+let sigPad = null;
+function renderConsent() {
+  $('#steps-consent').innerHTML = stepsHTML(S.mode === 'encuesta' ? 1 : 2);
+  const c = S.consent, i = inst();
+  const enc = S.mode === 'encuesta';
+  const eleg = (S.mode === 'encuesta' ? ['Tiene 18 años o más', 'Produce café en el distrito de San Miguel de El Faique', 'Conduce o comparte la conducción de la parcela'] : i.elegib);
+  const now = new Date();
+  const sections = consentSections();
+  $('#consent-body').innerHTML = `
+  <div class="card p-4 flex items-center gap-3">
+    <div class="w-12 h-12 rounded-2xl ${S.mode === 'encuesta' ? 'bg-coral-soft text-primary' : 'bg-sage-light text-secondary'} grid place-items-center shrink-0">${ic(S.mode === 'encuesta' ? 'fact_check' : 'record_voice_over', 'text-[26px]')}</div>
+    <div class="flex-1 min-w-0"><p class="text-[12px] font-bold text-text-tertiary tracking-wider">${S.mode === 'encuesta' ? 'Encuesta' : 'Entrevista · Grupo ' + S.tipo}</p><p class="font-title-md text-title-md leading-tight">${enc ? 'Cuestionarios de barreras y de parto domiciliario' : esc(i.corto || i.titulo)}</p><p class="text-[13px] text-text-secondary">Dirigido a: <b>${esc(dirigidoLabel())}</b></p><span class="inline-block mt-2 px-3 py-1 rounded-full bg-cream-surface font-mono text-[12px] font-bold">${esc(S.id)}</span></div>
+  </div>
+
+  <div class="card p-5">
+    <div class="flex items-center gap-2 mb-3">${ic('rule', 'text-primary')}<h3 class="font-title-lg text-title-lg">Criterios de participación</h3></div>
+    <div class="space-y-2" id="eleg">${eleg.map((t, k) => `<label class="switch"><input type="checkbox" data-eleg="${k}" ${c.elegib[k] ? 'checked' : ''}/><span class="flex-1 text-[15px] font-semibold">${esc(t)}</span><span class="trk"></span></label>`).join('')}</div>
+    <p id="eleg-warn" class="hidden mt-3 text-[13px] font-semibold text-alert-high-risk flex items-center gap-1">${ic('warning', 'text-[18px]')} Si no cumple los criterios, no corresponde aplicar el instrumento.</p>
+  </div>
+
+  <div class="card p-5">
+    <div class="flex items-center gap-2 mb-1">${ic('description', 'text-primary')}<h3 class="font-title-lg text-title-lg flex-1">Consentimiento informado</h3>
+      <button id="btn-tts" class="qtool" onclick="readConsent()">${ic('volume_up')}<span>Escuchar</span></button></div>
+    <p class="text-[13px] text-text-secondary mb-3">Lea o escuche en voz alta esta información a la participante antes de continuar.</p>
+    <div class="space-y-2" id="consent-text">${sections.map((s, k) => `<details class="acc" ${k === 0 ? 'open' : ''}><summary>${ic(s[0], 'text-primary')}<span>${s[1]}</span>${ic('expand_more', 'car text-text-tertiary')}</summary><div class="body">${s[2]}</div></details>`).join('')}</div>
+  </div>
+
+  <div class="card p-5">
+    <h3 class="font-title-lg text-title-lg mb-1 flex items-center gap-2">${ic('perm_media', 'text-primary')} Autorizaciones</h3>
+    <p class="text-[13px] text-text-secondary mb-3">Pregunte a la participante y active solo lo que autorice.</p>
+    <div class="space-y-2">
+      <label class="switch"><input type="checkbox" id="au-audio" ${c.audio ? 'checked' : ''}/>${ic('mic', 'text-secondary')}<span class="flex-1"><b class="block text-[15px]">Autorizo grabar el audio</b><span class="text-[12px] text-text-secondary">Solo para transcribir y analizar la información.</span></span><span class="trk"></span></label>
+      <label class="switch"><input type="checkbox" id="au-foto" ${c.foto ? 'checked' : ''}/>${ic('photo_camera', 'text-tertiary')}<span class="flex-1"><b class="block text-[15px]">Autorizo tomar fotografías</b><span class="text-[12px] text-text-secondary">Se evitará fotografiar rostros sin su permiso expreso.</span></span><span class="trk"></span></label>
+    </div>
+  </div>
+
+  <div class="card p-5">
+    <h3 class="font-title-lg text-title-lg mb-3 flex items-center gap-2">${ic('how_to_reg', 'text-primary')} ¿Acepta participar?</h3>
+    <div class="grid grid-cols-2 gap-3">
+      <button class="pick !p-4 text-center ${c.acepta === true ? 'on' : ''}" onclick="setAcepta(true)"><div class="mx-auto w-12 h-12 rounded-full bg-sage-light text-secondary grid place-items-center mb-2">${ic('thumb_up', 'fill text-[26px]')}</div><b class="text-[16px]">Sí, acepto</b></button>
+      <button class="pick !p-4 text-center ${c.acepta === false ? 'on' : ''}" onclick="setAcepta(false)"><div class="mx-auto w-12 h-12 rounded-full bg-red-100 text-alert-high-risk grid place-items-center mb-2">${ic('thumb_down', 'fill text-[26px]')}</div><b class="text-[16px]">No acepto</b></button>
+    </div>
+  </div>
+
+  <div id="no-acepta" class="${c.acepta === false ? '' : 'hidden'} card p-5 text-center border-2 border-tertiary-fixed">
+    ${ic('handshake', 'text-[40px] text-tertiary')}<p class="font-title-md text-title-md mt-1">Gracias por su tiempo</p><p class="text-text-secondary text-[14px]">Su decisión es respetada. No se registró ningún dato.</p>
+    <button class="btn btn-ghost mt-3" onclick="goHome()">Volver al inicio</button>
+  </div>
+  `;
+  bindConsent(); updEleg();
+  $('#consent-go').classList.add('hidden');
+  initSig();
+}
+function updEleg() {
+  // el aviso aparece cuando la persona marcó "no" en algún criterio
+  $('#eleg-warn').classList.toggle('hidden', !S.consent.elegib.some(x => x === false));
+}
+function bindConsent() {
+  const c = S.consent;
+  $$('[data-eleg]').forEach(x => x.addEventListener('change', () => { c.elegib[+x.dataset.eleg] = x.checked; updEleg(); saveDraftSoon(); }));
+  const bind = (id, k, f = v => v) => { const el = $('#' + id); if (el) el.addEventListener('input', () => { c[k] = f(el.value); el.classList.remove('err'); saveDraftSoon(); }); };
+  bind('c-nombre', 'nombre'); bind('c-dni', 'dni', v => v.replace(/\D/g, '')); bind('c-testigo', 'testigo'); bind('c-testigodni', 'testigoDni', v => v.replace(/\D/g, ''));
+  const ip = $('#c-inv'); if (ip) { ip.addEventListener('click', e => { const b = e.target.closest('[data-inv]'); if (b) invPick(ip, b); }); ip.addEventListener('input', e => { if (e.target.matches('[data-invotro]')) { c.invNombre = e.target.value; saveDraftSoon(); } }); }
+  ['c-dni', 'c-testigodni'].forEach(id => { const e = $('#' + id); if (e) e.addEventListener('input', () => e.value = e.value.replace(/\D/g, '')); });
+  $('#au-audio')?.addEventListener('change', e => { c.audio = e.target.checked; saveDraftSoon(); });
+  $('#au-foto')?.addEventListener('change', e => { c.foto = e.target.checked; saveDraftSoon(); });
+  $('#c-sinfirma')?.addEventListener('change', e => { c.sinFirma = e.target.checked; $('#firma-box').classList.toggle('hidden', c.sinFirma); $('#testigo-box').classList.toggle('hidden', !c.sinFirma); if (!c.sinFirma) initSig(); saveDraftSoon(); });
+}
+function setAcepta(v) {
+  const nElig = S.mode === 'encuesta' ? 3 : inst().elegib.length;
+  if (v && Array.from({ length: nElig }, (_, k) => S.consent.elegib[k]).some(x => !x)) {
+    toast('Marque que la persona cumple todos los criterios de participación', 'bad', 'rule');
+    const el = $('#eleg'); el.classList.add('shake'); setTimeout(() => el.classList.remove('shake'), 400); el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  S.consent.acepta = v;
+  $('#no-acepta').classList.add('hidden');
+  $$('#v-consent .pick').forEach((b, k) => b.classList.toggle('on', (k === 0) === v));
+  saveDraftSoon();
+  if (v) return goGenerales();
+  declineRestart();
+}
+/* No acepta: agradece y deja lista una nueva encuesta/entrevista, desde los criterios de participación */
+function declineRestart() {
+  clearTimeout(dTimer);
+  const mode = S.mode, tipo = S.tipo; let done = false;
+  const o = document.createElement('div'); o.className = 'overlay';
+  o.innerHTML = `<div class="sheet text-center"><div class="w-16 h-16 mx-auto rounded-full bg-tertiary-fixed text-tertiary grid place-items-center">${ic('handshake', 'text-[34px] fill')}</div>
+    <h3 class="mt-3 text-[22px] font-bold">Gracias por su tiempo</h3><p class="mt-1 text-text-secondary">Su decisión es respetada.</p>
+    <button class="btn btn-primary w-full mt-5" data-go>${ic('restart_alt')} ${mode === 'encuesta' ? 'Nueva encuesta' : 'Nueva entrevista'}</button></div>`;
+  const restart = async () => {
+    if (done) return; done = true; clearTimeout(t); o.remove(); clearTimeout(dTimer);
+    try { await DB.del('borrador', 'actual'); } catch { }
+    if (mode === 'encuesta') newSession('encuesta', 'barreras', null); else newSession('entrevista', tipo, null);
+    renderConsent(); window.scrollTo({ top: 0 });
+  };
+  o.onclick = e => { if (e.target === o || e.target.closest('[data-go]')) restart(); };
+  const t = setTimeout(restart, 3500);
+  document.body.appendChild(o);
+}
+window.setAcepta = setAcepta;
+
+/* firma */
+function initSig() {
+  const cv = $('#sig'); if (!cv || cv.offsetWidth === 0) { if (cv) setTimeout(initSig, 150); return; }
+  const dpr = window.devicePixelRatio || 1;
+  cv.width = cv.offsetWidth * dpr; cv.height = cv.offsetHeight * dpr;
+  const g = cv.getContext('2d'); g.scale(dpr, dpr); g.lineWidth = 2.6; g.lineCap = 'round'; g.lineJoin = 'round'; g.strokeStyle = '#292524';
+  sigPad = { cv, g, drawing: false, dirty: false };
+  if (S.consent.firma) { const im = new Image(); im.onload = () => { g.drawImage(im, 0, 0, cv.offsetWidth, cv.offsetHeight); sigPad.dirty = true; }; im.src = S.consent.firma; }
+  const pos = e => { const r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+  cv.onpointerdown = e => { cv.setPointerCapture(e.pointerId); sigPad.drawing = true; const [x, y] = pos(e); g.beginPath(); g.moveTo(x, y); g.lineTo(x + .1, y + .1); g.stroke(); };
+  cv.onpointermove = e => { if (!sigPad.drawing) return; const [x, y] = pos(e); g.lineTo(x, y); g.stroke(); sigPad.dirty = true; };
+  const end = () => { if (!sigPad.drawing) return; sigPad.drawing = false; S.consent.firma = cv.toDataURL('image/png'); cv.classList.remove('err-box'); saveDraftSoon(); };
+  cv.onpointerup = end; cv.onpointercancel = end;
+}
+function sigClear() { if (!sigPad) return; sigPad.g.clearRect(0, 0, sigPad.cv.width, sigPad.cv.height); sigPad.dirty = false; S.consent.firma = ''; saveDraftSoon(); }
+window.sigClear = sigClear;
+
+/* leer en voz alta */
+function readConsent() {
+  const b = $('#btn-tts');
+  if (!('speechSynthesis' in window)) return toast('Este dispositivo no admite lectura en voz alta', 'bad', 'volume_off');
+  if (speechSynthesis.speaking) { speechSynthesis.cancel(); b.querySelector('span:last-child').textContent = 'Escuchar'; return; }
+  const txt = $$('#consent-text details').map(d => d.querySelector('summary span:nth-child(2)').textContent + '. ' + d.querySelector('.body').innerText).join(' ');
+  const u = new SpeechSynthesisUtterance(txt); u.lang = 'es-PE'; u.rate = .95;
+  u.onend = u.onerror = () => { b.querySelector('span:last-child').textContent = 'Escuchar'; };
+  b.querySelector('span:last-child').textContent = 'Detener';
+  speechSynthesis.speak(u);
+}
+window.readConsent = readConsent;
+
+function acceptConsent() {
+  const c = S.consent; const bad = [];
+  const mark = (id, cond, msg) => { if (cond) { const el = $('#' + id); if (el) el.classList.add(id === 'sig' ? 'err-box' : 'err'); bad.push({ id, msg }); } };
+  if (c.acepta !== true) { toast(c.acepta === false ? 'Sin consentimiento no se puede continuar' : 'Indique si la persona acepta participar', 'bad', 'warning'); return; }
+  const enc = S.mode === 'encuesta'; const nElig = enc ? 3 : inst().elegib.length;
+  if (Array.from({ length: nElig }, (_, k) => c.elegib[k]).some(x => !x)) { toast('La persona debe cumplir todos los criterios de participación', 'bad', 'rule'); $('#eleg').classList.add('shake'); setTimeout(() => $('#eleg').classList.remove('shake'), 400); $('#eleg').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+  if (!enc) {
+    mark('c-nombre', c.nombre.trim().length < 5, 'Ingrese nombres y apellidos');
+    mark('c-dni', !/^\d{8}$/.test(c.dni), 'El DNI debe tener 8 dígitos');
+    if (c.sinFirma) { mark('c-testigo', c.testigo.trim().length < 5, 'Ingrese el nombre del testigo'); mark('c-testigodni', !/^\d{8}$/.test(c.testigoDni), 'DNI del testigo de 8 dígitos'); }
+    else mark('sig', !(sigPad && sigPad.dirty) || !c.firma, 'Falta la firma');
+  }
+  mark('c-inv', c.invNombre.trim().length < 5, 'Indique el/la investigador/a');
+  if (bad.length) { toast(bad[0].msg, 'bad', 'edit_note'); const el = $('#' + bad[0].id); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.classList.add('shake'); setTimeout(() => el.classList.remove('shake'), 400); return; }
+  c.fecha = new Date().toLocaleDateString('es-PE'); c.hora = new Date().toTimeString().slice(0, 5);
+  const cf = LS.get('ch_cfg', {}); cf.invNombre = c.invNombre; LS.set('ch_cfg', cf);
+  if (speechSynthesis && speechSynthesis.speaking) speechSynthesis.cancel();
+  toast('Consentimiento registrado', 'ok', 'verified_user');
+  if (enc) return goGenerales();
+  history.pushState({ v: 'form' }, '', '#form');
+  go('form', false); renderForm();
+}
+window.acceptConsent = acceptConsent;
+
+/* =====================================================================
+   FORMULARIO
+   ===================================================================== */
+function ctrlVisible(f) { return !f.si || f.si === S.dirigido; }
+function invPickerHTML(id) {
+  const c = S.consent; const otro = c.invOtro || (c.invNombre && !CFG.investigadoras.includes(c.invNombre));
+  return `<div id="${id}"><label class="lbl">Seleccione quién aplica</label><div class="space-y-2">
+    ${CFG.investigadoras.map(n => `<button type="button" class="pick !p-3 ${c.invNombre === n ? 'on' : ''}" data-inv="${esc(n)}"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-coral-soft text-primary grid place-items-center shrink-0">${ic('person', 'fill')}</div><span class="flex-1 font-semibold text-[15px] leading-5">${esc(n)}</span><span class="tick">${ic('check', 'text-[18px]')}</span></div></button>`).join('')}
+    <button type="button" class="pick !p-3 ${otro ? 'on' : ''}" data-inv="__otro"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-cream-surface text-text-secondary grid place-items-center shrink-0">${ic('group_add')}</div><span class="flex-1 font-semibold text-[15px]">Otra persona del equipo</span><span class="tick">${ic('check', 'text-[18px]')}</span></div></button></div>
+    <input class="fld mt-2 ${otro ? '' : 'hidden'}" data-invotro placeholder="Nombres y apellidos" value="${esc(otro ? c.invNombre : '')}"/></div>`;
+}
+function invPick(root, b) {
+  const c = S.consent; const v = b.dataset.inv;
+  if (v === '__otro') { c.invOtro = true; c.invNombre = ''; } else { c.invOtro = false; c.invNombre = v; }
+  $$('[data-inv]', root).forEach(x => x.classList.toggle('on', x === b));
+  const inp = $('[data-invotro]', root); inp.classList.toggle('hidden', v !== '__otro');
+  if (v === '__otro') { inp.value = ''; inp.focus(); }
+  saveDraftSoon();
+}
+const genFields = () => (S.mode === 'encuesta' ? GENERALES : inst().ctrl).filter(ctrlVisible);
+function fieldsHTML(fields) {
+  return fields.map(f => {
+    const v = S.ctrl[f.id] ?? (f.tipo === 'chipsm' ? [] : '');
+    let inp = '';
+    if (f.tipo === 'text' || f.tipo === 'number') inp = `<input class="fld" data-c="${f.id}" type="${f.tipo === 'number' ? 'number' : 'text'}" ${f.tipo === 'number' ? `inputmode="numeric" min="${f.min}" max="${f.max}"` : ''} placeholder="${esc(f.ph || '')}" value="${esc(v)}" autocomplete="off"/>`;
+    else inp = `<div class="flex flex-wrap gap-2" data-cc="${f.id}">${f.opc.map(o => `<button type="button" class="chip ${(f.tipo === 'chipsm' ? v.includes(o) : v === o) ? 'on' : ''}" data-cv="${esc(o)}">${o}</button>`).join('')}</div>`;
+    return `<div data-cwrap="${f.id}"><label class="lbl flex items-center gap-1">${ic(f.icon || 'edit', 'text-[16px]')}${esc(f.label)}${f.req ? ' <span class="text-primary">*</span>' : ''}</label>${inp}</div>`;
+  }).join('');
+}
+function ctrlHTML() {
+  const fields = inst().ctrl.filter(ctrlVisible);
+  if (!fields.length) return '';
+  return `<div class="card p-5 space-y-4"><div class="flex items-center gap-2">${ic('badge', 'text-primary')}<h3 class="font-title-lg text-title-lg">Datos de la persona entrevistada</h3></div>${fieldsHTML(fields)}</div>`;
+}
+/* clic en una opción tipo "chip"; devuelve 'again' si hay que redibujar (cambió la condición) */
+function chipClick(ch, fields) {
+  const id = ch.parentElement.dataset.cc; const f = fields.find(x => x.id === id); const v = ch.dataset.cv;
+  if (f.tipo === 'chipsm') { const a = S.ctrl[id] || []; S.ctrl[id] = a.includes(v) ? a.filter(x => x !== v) : [...a, v]; }
+  else S.ctrl[id] = S.ctrl[id] === v ? '' : v;
+  if (id === 'condicion') { S.dirigido = S.ctrl.condicion === 'Socio/a' ? 'gestante' : S.ctrl.condicion === 'No socio/a' ? 'puerpera' : null; delete S.ctrl.trim; delete S.ctrl.meses; return 'again'; }
+  $$('[data-cv]', ch.parentElement).forEach(b => b.classList.toggle('on', f.tipo === 'chipsm' ? (S.ctrl[id] || []).includes(b.dataset.cv) : S.ctrl[id] === b.dataset.cv));
+  ch.style.animation = 'pop .3s'; setTimeout(() => ch.style.animation = '', 300);
+  return '';
+}
+/* ----- pantalla de datos generales (encuesta) ----- */
+function goGenerales() {
+  history.pushState({ v: 'general' }, '', '#general');
+  go('general', false); renderGenerales();
+}
+function renderGenerales() {
+  $('#steps-general').innerHTML = stepsHTML(S.mode === 'encuesta' ? 2 : 3);
+  const c = S.consent; const enc = S.mode === 'encuesta';
+  $('#general-body').innerHTML = `
+  <div class="rounded-3xl p-5 text-white bg-gradient-to-br ${enc ? 'from-primary to-primary-container' : 'from-secondary to-[#14592D]'} shadow-lg relative overflow-hidden">
+    ${ic('badge', 'absolute -right-4 -bottom-6 text-[110px] opacity-15 fill')}
+    <p class="text-[12px] font-bold tracking-wider opacity-90">${enc ? 'Encuesta' : 'Entrevista · Grupo ' + S.tipo} · ${esc(S.id)}</p>
+    <h2 class="text-[24px] leading-8 font-bold mt-1">${enc ? 'Datos generales' : 'Datos de la persona entrevistada'}</h2>
+    <p class="mt-2 text-[14px] opacity-95 leading-5">${enc ? 'Se piden una sola vez y valen para los dos cuestionarios.' : 'Se piden antes de comenzar la guía de preguntas.'}</p></div>
+  <div class="card p-5 space-y-4" id="gen-fields">${fieldsHTML(genFields())}</div>
+  <div class="card p-5 space-y-4">
+    <div class="flex items-center gap-2">${ic('school', 'text-primary')}<h3 class="font-title-lg text-title-lg">Investigador/a que corresponde</h3></div>
+    ${invPickerHTML('g-inv-w')}
+  </div>`;
+  const gb = $('#general-body');
+  gb.oninput = e => {
+    const t = e.target;
+    if (t.dataset.c) S.ctrl[t.dataset.c] = t.value;
+    else if (t.matches('[data-invotro]')) c.invNombre = t.value;
+    else return;
+    t.classList.remove('err'); saveDraftSoon();
+  };
+  gb.onclick = e => { const ib = e.target.closest('[data-inv]'); if (ib) return invPick($('#g-inv-w'), ib); const ch = e.target.closest('[data-cv]'); if (!ch) return; if (chipClick(ch, enc ? GENERALES : inst().ctrl) === 'again') renderGenerales(); saveDraftSoon(); };
+}
+function nextGenerales() {
+  const c = S.consent; const bad = [];
+  genFields().forEach(f => {
+    const v = String(S.ctrl[f.id] ?? '').trim();
+    if (f.req && !v) bad.push({ sel: `[data-cwrap="${f.id}"]`, msg: 'Falta: ' + f.label });
+    else if (f.tipo === 'number' && v !== '' && (Number(v) < f.min || Number(v) > f.max)) bad.push({ sel: `[data-cwrap="${f.id}"]`, msg: `${f.label}: valor entre ${f.min} y ${f.max}` });
+  });
+  if (c.invNombre.trim().length < 5) bad.push({ sel: '#g-inv-w', msg: 'Indique el/la investigador/a' });
+  if (bad.length) {
+    const el = $(bad[0].sel); el.querySelector('.fld')?.classList.add('err');
+    toast(bad[0].msg, 'bad', 'edit_note'); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.classList.add('shake'); setTimeout(() => el.classList.remove('shake'), 400);
+    return;
+  }
+  c.fecha = new Date().toLocaleDateString('es-PE'); c.hora = new Date().toTimeString().slice(0, 5);
+  const cf = LS.get('ch_cfg', {}); cf.invNombre = c.invNombre; LS.set('ch_cfg', cf);
+  if (S.mode === 'encuesta') S.tipo = 'barreras';
+  S.filtro = 'todas';
+  history.pushState({ v: 'form', t: S.tipo }, '', '#form');
+  go('form', false); renderForm();
+}
+window.nextGenerales = nextGenerales;
+function optHTML(q, o, k) {
+  const v = S.resp[q.id];
+  const on = q.tipo === 'multi' ? (v || []).includes(o.v) : v === o.v;
+  const t = q.tipo === 'multi' ? 'checkbox' : 'radio';
+  return `<label class="opt"><input type="${t}" name="${q.id}" data-q="${q.id}" value="${esc(o.v)}" ${on ? 'checked' : ''}/><span class="opt-body">${o.icon ? ic(o.icon, 'ico') : ''}<span class="flex-1">${esc(o.label || o.v)}</span><span class="chk">${ic('check')}</span></span></label>`;
+}
+function qHTML(q, n) {
+  const ent = S.mode === 'entrevista';
+  let body = '';
+  if (q.tipo === 'single' || q.tipo === 'multi') {
+    const otro = q.opc.find(o => o.otro);
+    const showOtro = otro && (q.tipo === 'multi' ? (S.resp[q.id] || []).includes('Otro') : S.resp[q.id] === 'Otro');
+    body = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 ${q.tipo === 'multi' ? 'multi' : ''}">${q.opc.map((o, k) => optHTML(q, o, k)).join('')}</div>
+      ${otro ? `<div class="${showOtro ? '' : 'hidden'} mt-2" data-otro="${q.id}"><input class="fld" data-qo="${q.id}" placeholder="Especifique..." value="${esc(S.resp[q.id + '|otro'] || '')}"/></div>` : ''}`;
+  } else {
+    body = `<textarea class="fld" data-q="${q.id}" rows="3" placeholder="Escriba aquí las respuestas y observaciones de la persona entrevistada...">${esc(S.resp[q.id] || '')}</textarea>
+      <div class="mt-2 flex flex-wrap items-center gap-2">
+        <button class="qtool ${!S.consent.audio ? 'off' : ''}" data-qmic="${q.id}" onclick="toggleRec('${q.id}')">${ic('mic')}<span>Audio</span></button>
+        <button class="qtool ${!S.consent.foto ? 'off' : ''}" onclick="takePhoto('${q.id}')">${ic('photo_camera')}<span>Foto</span></button>
+        <span class="qm flex flex-wrap gap-1" data-tag="${q.id}"></span></div>`;
+  }
+  return `<article class="qcard" id="q-${q.id}" data-dim="${q.dim || ''}" data-id="${q.id}"><div class="flex items-start gap-3 mb-3"><span class="qnum">${n}</span>
+    <div class="flex-1 min-w-0">${q.cat ? `<div class="qcat">${ic(({ geo: 'route', eco: 'payments', cul: 'diversity_1', A: 'history', B: 'place', C: 'flag' })[q.dim] || 'label')}${esc(q.cat)}</div>` : ''}<h4 class="qtext">${esc(qText(q))}</h4>${ent && q.tipo !== 'single' && q.tipo !== 'multi' ? `<span class="qaudio hidden mt-2 inline-flex items-center gap-1 whitespace-nowrap px-2.5 py-1 rounded-full bg-green-100 text-alert-low-risk text-[12px] font-bold">${ic('mic', 'fill text-[16px]')}<span></span></span>` : ''}</div>
+    <span class="text-alert-low-risk qdone opacity-0 transition">${ic('check_circle', 'fill')}</span></div>${body}</article>`;
+}
+function renderForm() {
+  $('#steps-form').innerHTML = stepsHTML(S.mode === 'encuesta' ? (S.tipo === 'barreras' ? 3 : 4) : 4);
+  const i = inst(); const ent = S.mode === 'entrevista';
+  const fl = [{ id: 'todas', label: 'Todas', icon: 'apps' }, ...i.filtros, { id: 'pend', label: 'Sin responder', icon: 'pending' }];
+  let n = 0;
+  $('#form-body').innerHTML = `
+  <div class="rounded-3xl p-5 text-white ${ent ? 'bg-gradient-to-br from-secondary to-[#14592D]' : 'bg-gradient-to-br from-primary to-primary-container'} shadow-lg relative overflow-hidden">
+    ${ic(i.icon, 'absolute -right-4 -bottom-6 text-[110px] opacity-15 fill')}
+    <p class="text-[12px] font-bold tracking-wider opacity-90">${ent ? 'Entrevista · Grupo ' + S.tipo : 'Encuesta · Cuestionario ' + (S.tipo === 'barreras' ? '1' : '2') + ' de 2'} · ${esc(S.id)}</p>
+    <h2 class="text-[20px] leading-7 font-bold mt-1">${esc(i.titulo)}</h2>
+    <div class="mt-2 flex flex-wrap gap-2 text-[12px] font-bold"><span class="px-2.5 py-1 rounded-full bg-white/20">${ic('person', 'text-[14px]')} ${esc(dirigidoLabel())}</span><span class="px-2.5 py-1 rounded-full bg-white/20">${ic('verified_user', 'text-[14px]')} Consentimiento ${ent ? 'firmado' : 'aceptado'}</span></div>
+    <p class="mt-3 text-[14px] opacity-95 leading-5">${esc(ent ? 'Objetivo: ' + i.objetivo : i.instrucciones)}</p></div>
+  <div class="sticky top-[79px] z-30 -mx-4 px-4 py-2 bg-background"><div class="flex gap-2 overflow-x-auto" id="filtros">${fl.map(f => `<button class="chip ${S.filtro === f.id ? 'on' : ''}" data-f="${f.id}">${ic(f.icon)}${f.label}<b class="ml-1 text-[11px] opacity-70" data-fc="${f.id}"></b></button>`).join('')}</div></div>
+  ${i.secciones.map(s => `<div class="sec" data-sec="${s.id}"><div class="flex items-center gap-2 mb-3 mt-2">${ic(s.icon, 'text-primary')}<h3 class="font-title-lg text-title-lg">${esc(s.titulo)}</h3></div><div class="space-y-3">${s.preguntas.map(q => qHTML(q, ++n)).join('')}</div></div>`).join('')}
+  ${ent ? `<div class="card p-5"><div class="flex items-center gap-2 mb-2">${ic('edit_note', 'text-primary')}<h3 class="font-title-lg text-title-lg">Observaciones generales</h3></div><textarea class="fld" id="notas" rows="4" placeholder="Contexto de la entrevista, comportamiento no verbal, incidencias...">${esc(S.notas)}</textarea></div>` : ''}
+  <div id="media-sec" class="card p-5 scroll-mt-24"><div class="flex items-center gap-2 mb-3">${ic('perm_media', 'text-primary')}<h3 class="font-title-lg text-title-lg flex-1">Evidencias</h3>
+    <button class="qtool" onclick="attachFile()">${ic('attach_file')}<span>Adjuntar</span></button></div>
+    <div id="media-list" class="space-y-2"></div></div>`;
+  bindForm(); refreshAll(); renderMedia(); autosizeAll();
+  const sig = S.mode === 'encuesta' && S.tipo === 'barreras';
+  $('#dock-next-t').textContent = sig ? 'Siguiente' : 'Finalizar'; $('#dock-next-ico').textContent = sig ? 'arrow_forward' : 'send';
+}
+function bindForm() {
+  const fb = $('#form-body');
+  fb.oninput = e => {
+    const t = e.target;
+    if (t.dataset.c) { S.ctrl[t.dataset.c] = t.value; t.classList.remove('err'); }
+    else if (t.dataset.qo) { S.resp[t.dataset.qo + '|otro'] = t.value; }
+    else if (t.dataset.q && (t.tagName === 'TEXTAREA')) { S.resp[t.dataset.q] = t.value; autosize(t); }
+    else if (t.id === 'notas') { S.notas = t.value; autosize(t); }
+    else return;
+    refreshAll(); saveDraftSoon();
+  };
+  fb.onchange = e => {
+    const t = e.target; const q = t.dataset.q; if (!q || t.tagName === 'TEXTAREA') return;
+    if (t.type === 'radio') S.resp[q] = t.value;
+    else { const a = S.resp[q] || []; S.resp[q] = t.checked ? [...a, t.value] : a.filter(x => x !== t.value); }
+    const w = $(`[data-otro="${q}"]`);
+    if (w) { const on = t.type === 'radio' ? S.resp[q] === 'Otro' : (S.resp[q] || []).includes('Otro'); w.classList.toggle('hidden', !on); if (on && t.value === 'Otro') w.querySelector('input').focus(); }
+    refreshAll(); saveDraftSoon();
+  };
+  fb.onclick = e => {
+    const ch = e.target.closest('[data-cv]');
+    if (ch) { if (chipClick(ch, inst().ctrl) === 'again') renderForm(); saveDraftSoon(); return; }
+    const f = e.target.closest('[data-f]');
+    if (f) { S.filtro = f.dataset.f; $$('#filtros .chip').forEach(b => b.classList.toggle('on', b.dataset.f === S.filtro)); applyFiltro(); }
+  };
+}
+const autosize = t => { t.style.height = 'auto'; t.style.height = Math.max(96, t.scrollHeight + 2) + 'px'; };
+const autosizeAll = () => $$('#form-body textarea').forEach(autosize);
+
+function answered(q) {
+  const v = S.resp[q.id];
+  if (q.tipo === 'multi') return (v || []).length > 0 && (!(v || []).includes('Otro') || String(S.resp[q.id + '|otro'] || '').trim() !== '');
+  if (q.tipo === 'single') return !!v && (v !== 'Otro' || String(S.resp[q.id + '|otro'] || '').trim() !== '');
+  return String(v || '').trim() !== '' || S.media.some(m => m.tag === q.id && m.kind === 'audio');
+}
+function refreshAll() {
+  const qs = flat(); const done = qs.filter(answered).length;
+  const pct = Math.round(done / qs.length * 100);
+  $('#ring').style.setProperty('--v', pct); $('#ring-t').textContent = pct + '%';
+  qs.forEach(q => {
+    const el = $('#q-' + q.id); if (!el) return; const d = answered(q); el.classList.toggle('done', d); el.querySelector('.qdone').style.opacity = d ? 1 : 0;
+    const qa = el.querySelector('.qaudio'); if (!qa) return;
+    const au = S.media.filter(m => m.tag === q.id && m.kind === 'audio');
+    qa.classList.toggle('hidden', !au.length);
+    qa.lastElementChild.textContent = au.length ? `Respondida con audio${au.length > 1 ? ' (' + au.length + ')' : ''} · ${fmtTime(au.reduce((t, m) => t + (m.dur || 0), 0))}` : '';
+  });
+  const cnt = { todas: qs.length, pend: qs.length - done };
+  inst().filtros.forEach(f => { cnt[f.id] = f.id === 'evid' ? qs.filter(q => S.media.some(m => m.tag === q.id)).length : qs.filter(q => q.dim === f.id).length; });
+  $$('[data-fc]').forEach(b => b.textContent = cnt[b.dataset.fc] ?? '');
+  applyFiltro();
+}
+function applyFiltro() {
+  const f = S.filtro;
+  flat().forEach(q => {
+    const el = $('#q-' + q.id); if (!el) return;
+    let show = true;
+    if (f === 'pend') show = !answered(q);
+    else if (f === 'evid') show = S.media.some(m => m.tag === q.id);
+    else if (f !== 'todas') show = q.dim === f;
+    el.classList.toggle('hide', !show);
+  });
+  $$('.sec').forEach(s => s.classList.toggle('hidden', $$('.qcard:not(.hide)', s).length === 0));
+}
+
+/* =====================================================================
+   MULTIMEDIA: audio y foto
+   ===================================================================== */
+const Rec = { mr: null, stream: null, chunks: [], tag: 'general', acc: 0, t0: 0, paused: false, timer: null, wake: null };
+const tagLabel = t => t === 'general' ? 'General' : 'P' + (qNum(flat().find(q => q.id === t) || {}) || '?');
+function pickMime() { const c = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4', 'audio/ogg;codecs=opus']; return window.MediaRecorder ? c.find(m => MediaRecorder.isTypeSupported(m)) || '' : ''; }
+async function toggleRec(tag) {
+  if (Rec.mr) { const same = Rec.tag === tag; await stopRec(); if (same) return; }
+  startRec(tag);
+}
+async function startRec(tag) {
+  if (!S.consent.audio) return toast('La persona no autorizó la grabación de audio', 'bad', 'mic_off');
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !window.MediaRecorder) {
+    toast('Este navegador no permite grabar aquí. Se abrirá la grabadora del teléfono.', '', 'info');
+    $('#in-audio').dataset.tag = tag; $('#in-audio').click(); return;
+  }
+  let stream;
+  try { stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } }); }
+  catch (e) { return toast('No se pudo acceder al micrófono. Revise los permisos.', 'bad', 'mic_off'); }
+  const mime = pickMime();
+  const mr = new MediaRecorder(stream, mime ? { mimeType: mime, audioBitsPerSecond: 32000 } : { audioBitsPerSecond: 32000 });
+  Rec.mr = mr; Rec.stream = stream; Rec.chunks = []; Rec.tag = tag; Rec.acc = 0; Rec.t0 = performance.now(); Rec.paused = false;
+  mr.ondataavailable = e => { if (e.data.size) Rec.chunks.push(e.data); };
+  mr.start(1000);
+  try { Rec.wake = await navigator.wakeLock?.request('screen'); } catch { }
+  document.body.classList.add('recording');
+  $('#rec-ui').classList.remove('hidden'); $('#rec-ui').classList.add('flex');
+  $('#rec-tag').textContent = tagLabel(tag); $('#wave').classList.remove('paused');
+  $('#rec-pause span').textContent = 'pause';
+  $('#fab-rec').classList.add('live'); $$(`[data-qmic="${tag}"]`).forEach(b => b.classList.add('live'));
+  Rec.timer = setInterval(() => { const s = Rec.acc + (Rec.paused ? 0 : (performance.now() - Rec.t0) / 1000); $('#rec-time').textContent = fmtTime(s); }, 250);
+  toast('Grabando… mantenga la pantalla encendida', '', 'fiber_manual_record');
+}
+function pauseRec() {
+  if (!Rec.mr) return;
+  if (Rec.paused) { Rec.mr.resume(); Rec.t0 = performance.now(); Rec.paused = false; $('#wave').classList.remove('paused'); $('#rec-pause span').textContent = 'pause'; }
+  else { Rec.mr.pause(); Rec.acc += (performance.now() - Rec.t0) / 1000; Rec.paused = true; $('#wave').classList.add('paused'); $('#rec-pause span').textContent = 'play_arrow'; }
+}
+function stopRec() {
+  return new Promise(res => {
+    const mr = Rec.mr; if (!mr) return res();
+    const dur = Rec.acc + (Rec.paused ? 0 : (performance.now() - Rec.t0) / 1000);
+    const tag = Rec.tag;
+    mr.onstop = () => {
+      const blob = new Blob(Rec.chunks, { type: mr.mimeType || 'audio/webm' });
+      Rec.stream.getTracks().forEach(t => t.stop()); clearInterval(Rec.timer);
+      try { Rec.wake && Rec.wake.release(); } catch { }
+      Rec.mr = null; Rec.stream = null;
+      document.body.classList.remove('recording');
+      $('#rec-ui').classList.add('hidden'); $('#rec-ui').classList.remove('flex');
+      $('#fab-rec').classList.remove('live'); $$('.qtool.live').forEach(b => b.classList.remove('live'));
+      if (blob.size > 500) { addMedia({ kind: 'audio', blob, mime: baseMime(blob.type), tag, dur }); const q = flat().find(x => x.id === tag); toast(q ? `Pregunta ${qNum(q)} respondida con audio` : 'Audio guardado', 'ok', 'check_circle'); }
+      res();
+    };
+    if (mr.state !== 'inactive') mr.stop(); else mr.onstop();
+  });
+}
+function takePhoto(tag) {
+  if (!S.consent.foto) return toast('La persona no autorizó tomar fotografías', 'bad', 'no_photography');
+  const i = $('#in-photo'); i.dataset.tag = tag; i.value = ''; i.click();
+}
+function attachFile() { const i = $('#in-attach'); i.dataset.tag = 'general'; i.value = ''; i.click(); }
+async function compress(file, max = 1600, q = .8) {
+  return new Promise(res => {
+    const url = URL.createObjectURL(file); const im = new Image();
+    im.onload = () => {
+      const r = Math.min(1, max / Math.max(im.width, im.height)); const c = document.createElement('canvas');
+      c.width = Math.round(im.width * r); c.height = Math.round(im.height * r);
+      c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
+      c.toBlob(b => { URL.revokeObjectURL(url); res(b || file); }, 'image/jpeg', q);
+    };
+    im.onerror = () => { URL.revokeObjectURL(url); res(file); };
+    im.src = url;
+  });
+}
+async function onFiles(files, tag) {
+  for (const f of files) {
+    if (f.type.startsWith('image/')) { if (!S.consent.foto) { toast('Fotos no autorizadas', 'bad', 'no_photography'); continue; } const b = await compress(f); addMedia({ kind: 'foto', blob: b, mime: baseMime(b.type) || 'image/jpeg', tag }); }
+    else if (f.type.startsWith('audio/')) { if (!S.consent.audio) { toast('Audio no autorizado', 'bad', 'mic_off'); continue; } addMedia({ kind: 'audio', blob: f, mime: baseMime(f.type), tag, dur: 0 }); }
+  }
+}
+$('#in-photo').addEventListener('change', e => onFiles(e.target.files, e.target.dataset.tag || 'general'));
+$('#in-attach').addEventListener('change', e => onFiles(e.target.files, 'general'));
+$('#in-audio').addEventListener('change', e => onFiles(e.target.files, e.target.dataset.tag || 'general'));
+function addMedia(m) {
+  m.id = uid(); m.ts = Date.now(); m.size = m.blob.size;
+  S.media.push(m); renderMedia(); refreshAll(); saveDraftSoon();
+  if (m.kind === 'foto') toast('Foto agregada', 'ok', 'add_a_photo');
+}
+const urls = {};
+const urlOf = m => urls[m.id] || (urls[m.id] = URL.createObjectURL(m.blob));
+function delMedia(id) { S.media = S.media.filter(m => m.id !== id); if (urls[id]) { URL.revokeObjectURL(urls[id]); delete urls[id]; } renderMedia(); refreshAll(); saveDraftSoon(); }
+function renderMedia() {
+  $$('.qm').forEach(el => { el.innerHTML = S.media.filter(m => m.tag === el.dataset.tag).map(m => `<span class="mchip ${m.kind}">${ic(m.kind === 'audio' ? 'mic' : 'photo_camera')}${m.kind === 'audio' ? fmtTime(m.dur || 0) : 'foto'}<button onclick="delMedia('${m.id}')" aria-label="Quitar">${ic('close')}</button></span>`).join(''); });
+  const L = $('#media-list'); if (!L) return;
+  L.innerHTML = S.media.length ? S.media.map(m => `<div class="flex items-center gap-3 p-3 rounded-2xl bg-cream-surface">
+      ${m.kind === 'foto' ? `<img src="${urlOf(m)}" class="w-16 h-16 rounded-xl object-cover shrink-0" onclick="lightbox('${m.id}')"/>` : `<div class="w-12 h-12 rounded-xl bg-sage-light text-secondary grid place-items-center shrink-0">${ic('graphic_eq', 'text-[26px]')}</div>`}
+      <div class="flex-1 min-w-0"><p class="text-[14px] font-bold">${m.kind === 'audio' ? 'Audio' : 'Foto'} · ${tagLabel(m.tag)}</p><p class="text-[12px] text-text-secondary">${m.kind === 'audio' && m.dur ? fmtTime(m.dur) + ' · ' : ''}${kb(m.size)}</p>${m.kind === 'audio' ? `<audio class="w-full mt-1 h-8" controls preload="metadata" src="${urlOf(m)}"></audio>` : ''}</div>
+      <button class="w-9 h-9 rounded-full bg-white grid place-items-center text-alert-high-risk shrink-0" onclick="delMedia('${m.id}')" aria-label="Eliminar">${ic('delete', 'text-[20px]')}</button></div>`).join('')
+    : `<div class="text-center py-6 text-text-tertiary">${ic('perm_media', 'text-[36px]')}<p class="text-[14px]">Aún no hay audios ni fotos. Use los botones <b>micrófono</b> y <b>cámara</b> de abajo.</p></div>`;
+  const a = S.media.filter(m => m.kind === 'audio').length, f = S.media.filter(m => m.kind === 'foto').length;
+  $('#dock-media').innerHTML = `${a} audio${a === 1 ? '' : 's'}<br>${f} foto${f === 1 ? '' : 's'}`;
+  $('#fab-rec').classList.toggle('off', !S.consent.audio); $('#fab-cam').classList.toggle('off', !S.consent.foto);
+}
+function lightbox(id) {
+  const m = S.media.find(x => x.id === id); const o = document.createElement('div');
+  o.className = 'overlay'; o.innerHTML = `<img src="${urlOf(m)}" class="max-w-full max-h-[90vh] rounded-2xl shadow-2xl"/>`; o.onclick = () => o.remove(); document.body.appendChild(o);
+}
+Object.assign(window, { toggleRec, pauseRec, stopRec, takePhoto, attachFile, delMedia, lightbox });
+
+/* =====================================================================
+   BORRADOR
+   ===================================================================== */
+let dTimer = null;
+function saveDraftSoon() { clearTimeout(dTimer); dTimer = setTimeout(saveDraft, 500); }
+async function saveDraft() {
+  if (!S || !S.consent) return;
+  try { const { media, ...rest } = S; await DB.put('borrador', { k: 'actual', S: rest, media }); } catch (e) { }
+}
+
+/* =====================================================================
+   ENVÍO
+   ===================================================================== */
+function buildCampos() {
+  const i = inst(); const c = {};
+  (S.mode === 'encuesta' ? GENERALES : i.ctrl).filter(ctrlVisible).forEach(f => { const v = S.ctrl[f.id]; c[f.col] = Array.isArray(v) ? v.join(' | ') : (f.tipo === 'number' && v !== '' && v !== undefined ? Number(v) : (v ?? '')); });
+  flat().forEach(q => {
+    const n = qNum(q); const base = `P${n} · ${q.col}`; const v = S.resp[q.id]; const otro = String(S.resp[q.id + '|otro'] || '').trim();
+    const val = x => x === 'Otro' ? 'Otro: ' + otro : x;
+    if (q.tipo === 'multi') q.opc.forEach(o => { c[`${base} → ${o.v}`] = (v || []).includes(o.v) ? 1 : 0; });
+    else if (q.tipo === 'single') c[base] = v ? val(v) : '';
+    else c[base] = v || (S.media.some(m => m.tag === q.id && m.kind === 'audio') ? `Respondida con audio (ver hoja Multimedia, P${n})` : '');
+  });
+  if (S.mode === 'entrevista') c['Observaciones generales'] = S.notas;
+  c['N.º audios'] = S.media.filter(m => m.kind === 'audio').length; c['N.º fotos'] = S.media.filter(m => m.kind === 'foto').length;
+  return c;
+}
+function validateCtrl() {
+  const bad = inst().ctrl.filter(ctrlVisible).filter(f => f.req && String(S.ctrl[f.id] ?? '').trim() === '');
+  const range = inst().ctrl.filter(ctrlVisible).filter(f => f.tipo === 'number' && f.req && S.ctrl[f.id] !== '' && (Number(S.ctrl[f.id]) < f.min || Number(S.ctrl[f.id]) > f.max));
+  return [...bad, ...range];
+}
+async function nextForm() {
+  if (!(S.mode === 'encuesta' && S.tipo === 'barreras')) return finalizar();
+  if (Rec.mr) await stopRec();
+  const pend = flat().filter(q => !answered(q));
+  if (pend.length) {
+    const ok = await confirmBox({ title: `Faltan ${pend.length} ${pend.length === 1 ? 'pregunta' : 'preguntas'}`, text: 'Puede revisarlas ahora o continuar con el cuestionario de comercializaciio.', ok: 'Continuar', cancel: 'Revisar', icon: 'pending_actions' });
+    if (!ok) { S.filtro = 'pend'; renderForm(); window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+  }
+  S.tipo = 'parto'; S.filtro = 'todas';
+  history.pushState({ v: 'form', t: 'parto' }, '', '#form');
+  go('form', false); renderForm();
+  toast('Cuestionario 2 de 2: comercialización', 'ok', 'storefront');
+}
+window.nextForm = nextForm;
+async function finalizar() {
+  if (Rec.mr) await stopRec();
+  const bad = validateCtrl();
+  if (bad.length) { toast(`Revise: ${bad[0].label}`, 'bad', 'edit_note'); return goGenerales(); }
+  if (S.mode === 'encuesta') {
+    // encuesta: todas las preguntas de los dos cuestionarios son obligatorias
+    const actual = S.tipo;
+    const falta = ['barreras', 'parto'].map(t => { S.tipo = t; return [t, flat().filter(q => !answered(q))]; }).find(([, p]) => p.length);
+    S.tipo = actual;
+    if (falta) {
+      const [t, p] = falta;
+      S.tipo = t; const nums = p.map(qNum).join(', '); S.tipo = actual;
+      await confirmBox({ title: `Faltan ${p.length} ${p.length === 1 ? 'pregunta' : 'preguntas'}`, text: `En el ${ENCUESTAS[t].titulo.toLowerCase()} falta responder: ${nums}. Todas las preguntas de la encuesta son obligatorias.`, ok: 'Revisar', icon: 'pending_actions' });
+      if (S.tipo !== t) { S.tipo = t; history.pushState({ v: 'form', t }, '', '#form'); go('form', false); }
+      S.filtro = 'pend'; renderForm(); window.scrollTo({ top: 0, behavior: 'smooth' }); return;
+    }
+  }
+  const pend = flat().filter(q => !answered(q));
+  if (pend.length) {
+    const ok = await confirmBox({ title: `Faltan ${pend.length} ${pend.length === 1 ? 'pregunta' : 'preguntas'}`, text: 'Puede revisarlas ahora o enviar el registro tal como está.', ok: 'Enviar así', cancel: 'Revisar', icon: 'pending_actions' });
+    if (!ok) { S.filtro = 'pend'; renderForm(); window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+  } else if (!await confirmBox({ title: '¿Finalizar registro?', text: 'Se guardará y enviará a Google Sheets.', ok: 'Finalizar', icon: 'send' })) return;
+
+  const c = S.consent; const enc = S.mode === 'encuesta';
+  const firmaName = `${S.id}_firma.png`;
+  const consentimiento = { acepta: 'Sí', audio: c.audio ? 'Sí' : 'No', foto: c.foto ? 'Sí' : 'No', nombre: '', dni: '', sinFirma: 'No aplica', testigo: '', testigoDni: '', firmaArchivo: '', invNombre: c.invNombre.trim(), fecha: c.fecha, hora: c.hora };
+  const tipoActual = S.tipo; const regs = [];
+  for (const t of (enc ? ['barreras', 'parto'] : [S.tipo])) {
+    S.tipo = t; const i = inst();
+    regs.push({ id: S.id, hoja: i.hoja, meta: { instrumento: enc ? 'Encuesta' : 'Entrevista', tipo: i.titulo, dirigido: dirigidoLabel(), investigador: c.invNombre, inicio: S.inicio }, campos: buildCampos(), consentimiento, ok: false });
+  }
+  S.tipo = tipoActual;
+  const media = [];
+  let nA = 0, nF = 0;
+  S.media.forEach(m => {
+    const n = m.kind === 'audio' ? ++nA : ++nF;
+    media.push({ name: `${S.id}_${m.tag === 'general' ? 'general' : 'P' + qNum(flat().find(q => q.id === m.tag))}_${m.kind}${n}.${EXT[m.mime] || (m.kind === 'audio' ? 'webm' : 'jpg')}`, tipo: m.kind, mime: m.mime, etiqueta: tagLabel(m.tag), dur: Math.round(m.dur || 0), blob: m.blob, subido: false });
+  });
+  if (false) { const fb = await (await fetch(c.firma)).blob(); media.push({ name: firmaName, tipo: 'firma', mime: 'image/png', etiqueta: 'Consentimiento', dur: 0, blob: fb, subido: false }); }
+  const item = { id: S.id, regs, media, resumen: enc ? `Encuesta completa · ${regs[0].meta.dirigido}` : `Entrevista · ${inst().corto || inst().titulo} · ${regs[0].meta.dirigido}`, ts: Date.now() };
+  await DB.put('cola', item);
+  bump(S.mode === 'encuesta' ? 'enc:' + S.dirigido : 'ent:' + S.tipo);
+  await DB.del('borrador', 'actual');
+  const code = S.id, mode = S.mode, tipo = S.tipo, dirigido = S.dirigido;
+  S = null; lastSel = { mode, tipo, dirigido };
+  const r = await enviarItem(item, true);
+  showDone(code, r);
+  refreshPend();
+}
+let lastSel = null;
+function showDone(code, r) {
+  $('#done-code').textContent = code;
+  const ok = r === 'ok';
+  $('#done-ico').className = `w-24 h-24 mx-auto rounded-full grid place-items-center floaty ${ok ? 'bg-sage-light text-secondary' : 'bg-tertiary-fixed text-tertiary'}`;
+  $('#done-ico').innerHTML = ic(ok ? 'check_circle' : 'cloud_off', 'fill text-[56px]');
+  $('#done-title').textContent = ok ? '¡Registro enviado!' : 'Guardado en el dispositivo';
+  $('#done-text').textContent = ok ? 'Los datos, audios y fotos ya están en Google Sheets y Drive.' : (r === 'sinurl' ? 'Falta configurar la conexión en Ajustes. El registro quedó guardado y se enviará después.' : 'No hay conexión. Se enviará automáticamente cuando vuelva la señal.');
+  history.pushState({ v: 'done' }, '', '#done'); go('done', false);
+  if (ok) confetti();
+}
+function again() { if (!lastSel) return goHome(); sel = { mode: lastSel.mode, tipo: null, dirigido: null, tab: 1, cat: 'todos', q: '' }; if (lastSel.mode === 'encuesta') newSession('encuesta', 'barreras', null); else newSession('entrevista', lastSel.tipo, null); history.pushState({ v: 'consent' }, '', '#consent'); go('consent', false); renderConsent(); }
+window.again = again; window.finalizar = finalizar;
+
+/* ---- comunicación con Google Apps Script ---- */
+async function api(body, ms = 60000) {
+  const { url, token } = conf();
+  if (!url) throw new Error('SINURL');
+  const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), ms);
+  try {
+    const r = await fetch(url, { method: 'POST', body: JSON.stringify({ ...body, token }), signal: ctl.signal, redirect: 'follow' });
+    const j = await r.json();
+    if (!j.ok) throw new Error(j.error || 'Error del servidor');
+    return j;
+  } finally { clearTimeout(t); }
+}
+let syncing = false;
+function progress(txt, pct) {
+  let o = $('#sending');
+  if (!o) { o = document.createElement('div'); o.id = 'sending'; o.className = 'overlay'; o.innerHTML = `<div class="sheet text-center"><div class="w-16 h-16 mx-auto rounded-full bg-coral-soft text-primary grid place-items-center">${ic('cloud_upload', 'text-[34px] floaty')}</div><h3 class="mt-3 text-[20px] font-bold">Enviando registro</h3><p id="sending-t" class="text-text-secondary mt-1"></p><div class="prog mt-4"><div id="sending-b" style="width:0"></div></div></div>`; document.body.appendChild(o); }
+  $('#sending-t').textContent = txt; $('#sending-b').style.width = pct + '%';
+}
+async function enviarItem(item, ui = false) {
+  if (!conf().url) return 'sinurl';
+  if (!navigator.onLine) return 'offline';
+  if (!item.regs) item.regs = [Object.assign({}, item.payload, { ok: !!item.registroOk })];   // registros guardados con la versión anterior
+  try {
+    const total = item.regs.length + item.media.length; let hechos = 0;
+    for (const r of item.regs) {
+      if (!r.ok) {
+        if (ui) progress('Guardando respuestas en Google Sheets…', Math.round(hechos / total * 100) + 4);
+        const { ok, ...body } = r; await api({ accion: 'registro', ...body }); r.ok = true; await DB.put('cola', item);
+      }
+      hechos++;
+    }
+    const m0 = item.regs[0].meta;
+    const cuest = item.regs.length > 1 ? 'Encuesta completa (oferta + comercialización)' : m0.tipo;
+    let k = 0;
+    for (const m of item.media) {
+      k++;
+      if (m.subido) { hechos++; continue; }
+      if (ui) progress(`Subiendo ${m.tipo === 'audio' ? 'audio' : m.tipo === 'foto' ? 'foto' : 'firma'} ${k} de ${item.media.length}…`, Math.round(hechos / total * 100));
+      await api({ accion: 'media', idRegistro: item.id, nombre: m.name, mime: m.mime, tipo: m.tipo, etiqueta: m.etiqueta, duracion: m.dur, instrumento: m0.instrumento, cuestionario: cuest, dirigido: m0.dirigido, base64: await blobToB64(m.blob) }, 240000);
+      m.subido = true; await DB.put('cola', item); hechos++;
+    }
+    await DB.del('cola', item.id);
+    return 'ok';
+  } catch (e) { console.warn(e); return e.message === 'SINURL' ? 'sinurl' : 'error'; }
+  finally { $('#sending')?.remove(); }
+}
+async function sync(manual = false) {
+  if (syncing) return; syncing = true;
+  try {
+    const items = await DB.all('cola'); let ok = 0, fail = 0;
+    for (const it of items) { const r = await enviarItem(it, manual); r === 'ok' ? ok++ : fail++; }
+    if (manual) toast(!items.length ? 'No hay pendientes' : fail ? `${ok} enviados, ${fail} pendientes` : `${ok} registro(s) enviados`, fail ? 'bad' : 'ok', fail ? 'cloud_off' : 'cloud_done');
+    else if (ok) toast(`${ok} registro(s) pendientes enviados`, 'ok', 'cloud_done');
+  } finally { syncing = false; refreshPend(); }
+}
+async function refreshPend() {
+  let n = 0; try { n = (await DB.all('cola')).length; } catch { }
+  const b = $('#pend-badge'); b.textContent = n; b.classList.toggle('hidden', !n);
+  $('#home-pend').textContent = n ? `${n} registro${n > 1 ? 's' : ''} por enviar` : 'Ninguno';
+}
+async function openPend() {
+  const items = await DB.all('cola');
+  const o = document.createElement('div'); o.className = 'overlay';
+  o.innerHTML = `<div class="sheet"><div class="flex items-center gap-2 mb-3">${ic('cloud_sync', 'text-primary text-[28px]')}<h3 class="text-[20px] font-bold flex-1">Pendientes de envío</h3><button class="w-9 h-9 rounded-full bg-cream-surface grid place-items-center" data-x>${ic('close')}</button></div>
+    ${items.length ? items.map(it => `<div class="p-3 rounded-2xl bg-cream-surface mb-2 flex items-center gap-3"><div class="flex-1 min-w-0"><p class="font-mono text-[12px] font-bold">${esc(it.id)}</p><p class="text-[13px] text-text-secondary truncate">${esc(it.resumen)}</p><p class="text-[12px] text-text-tertiary">${it.media.filter(m => !m.subido).length} archivo(s) por subir</p></div><button class="w-9 h-9 rounded-full bg-white grid place-items-center text-alert-high-risk" data-del="${esc(it.id)}">${ic('delete', 'text-[20px]')}</button></div>`).join('') + `<button class="btn btn-primary w-full mt-3" data-sync>${ic('sync')} Sincronizar ahora</button>` : `<div class="text-center py-8 text-text-secondary">${ic('cloud_done', 'text-[48px] text-secondary')}<p class="font-title-md text-title-md mt-1">Todo está enviado</p></div>`}</div>`;
+  o.onclick = async e => {
+    if (e.target === o || e.target.closest('[data-x]')) return o.remove();
+    if (e.target.closest('[data-sync]')) { o.remove(); if (!conf().url) { toast('Configure la URL en Ajustes', 'bad', 'settings'); return openAjustes(); } return sync(true); }
+    const d = e.target.closest('[data-del]');
+    if (d && await confirmBox({ title: '¿Eliminar este registro?', text: 'No se ha enviado todavía. Se perderá definitivamente.', ok: 'Eliminar', danger: true, icon: 'delete' })) { await DB.del('cola', d.dataset.del); o.remove(); refreshPend(); openPend(); }
+  };
+  document.body.appendChild(o);
+}
+window.openPend = openPend;
+
+/* ---- ajustes ---- */
+function openAjustes() {
+  const c = conf();
+  const o = document.createElement('div'); o.className = 'overlay';
+  o.innerHTML = `<div class="sheet"><div class="flex items-center gap-2 mb-4">${ic('settings', 'text-primary text-[28px]')}<h3 class="text-[20px] font-bold flex-1">Ajustes de conexión</h3><button class="w-9 h-9 rounded-full bg-cream-surface grid place-items-center" data-x>${ic('close')}</button></div>
+    <div class="space-y-4">
+      <div><label class="lbl">Clave de recolección</label><input id="a-tok" class="fld" type="password" autocomplete="off" value="${esc(c.token)}" placeholder="Escriba su clave"/></div>
+      <details class="acc"><summary style="padding:10px 14px;font-size:14px">${ic('tune', 'text-text-secondary')}<span>Avanzado</span>${ic('expand_more', 'car text-text-tertiary')}</summary><div class="body" style="padding-top:0"><label class="lbl">URL de la aplicación web (Apps Script)</label><input id="a-url" class="fld" placeholder="https://script.google.com/macros/s/.../exec" value="${esc(c.url)}"/></div></details>
+      <div><label class="lbl">Encuestador/a por defecto</label><input id="a-inv" class="fld" list="inv-list2" value="${esc(c.invNombre)}"/><datalist id="inv-list2">${CFG.investigadoras.map(n => `<option value="${esc(n)}">`).join('')}</datalist></div>
+      <div id="a-res" class="hidden p-3 rounded-2xl text-[14px] font-semibold"></div>
+      <div class="flex gap-3"><button class="btn btn-ghost flex-1" data-test>${ic('wifi_tethering')} Probar</button><button class="btn btn-primary flex-1" data-save>${ic('save')} Guardar</button></div>
+    </div></div>`;
+  const save = () => { LS.set('ch_cfg', { url: $('#a-url', o).value.trim(), token: $('#a-tok', o).value.trim(), invNombre: $('#a-inv', o).value.trim() }); };
+  o.onclick = async e => {
+    if (e.target === o || e.target.closest('[data-x]')) return o.remove();
+    if (e.target.closest('[data-save]')) { save(); o.remove(); toast('Ajustes guardados', 'ok', 'check'); sync(); }
+    if (e.target.closest('[data-test]')) {
+      save(); const r = $('#a-res', o); r.className = 'p-3 rounded-2xl text-[14px] font-semibold bg-cream-surface'; r.textContent = 'Probando conexión…';
+      try { await api({ accion: 'ping' }, 20000); r.className = 'p-3 rounded-2xl text-[14px] font-semibold bg-sage-light text-secondary'; r.textContent = '✔ Conexión correcta con Google Sheets.'; }
+      catch (er) { r.className = 'p-3 rounded-2xl text-[14px] font-semibold bg-red-100 text-alert-high-risk'; r.textContent = er.message === 'SINURL' ? 'Escriba la URL.' : 'No se pudo conectar: ' + er.message; }
+    }
+  };
+  document.body.appendChild(o);
+}
+window.openAjustes = openAjustes;
+
+/* ---- estado de red ---- */
+function net() {
+  const on = navigator.onLine; const n = $('#net');
+  n.innerHTML = `<i class="dot ${on ? 'bg-alert-low-risk' : 'bg-alert-high-risk'}"></i><span>${on ? 'En línea' : 'Sin conexión'}</span>`;
+  n.className = `hidden sm:inline-flex items-center gap-1 px-3 py-1 rounded-full font-label-sm text-label-sm ${on ? 'bg-sage-light text-secondary' : 'bg-red-100 text-alert-high-risk'}`;
+}
+window.addEventListener('online', () => { net(); toast('Conexión recuperada', 'ok', 'wifi'); sync(); });
+window.addEventListener('offline', () => { net(); toast('Sin conexión: se guardará en el dispositivo', '', 'wifi_off'); });
+window.addEventListener('beforeunload', () => { saveDraft(); });
+
+/* ---- modo sin conexión (sw.js) ---- */
+function offline() {
+  if (!('serviceWorker' in navigator) || !window.isSecureContext) return;
+  const primeraVez = !navigator.serviceWorker.controller;
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    const w = reg.installing; if (!w || !primeraVez) return;
+    w.addEventListener('statechange', () => { if (w.state === 'activated') toast('Lista para usar sin internet', 'ok', 'offline_pin'); });
+  }).catch(() => {});
+  if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});   // que el teléfono no borre la cola
+}
+
+/* ---- inicio ---- */
+(function init() {
+  net(); history.replaceState({ v: 'home' }, '', '#home'); go('home', false);
+  sync(); offline();
+})();
+</script>
+</body></html>
