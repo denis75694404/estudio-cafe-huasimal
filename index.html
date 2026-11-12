@@ -721,7 +721,7 @@ function rebuildCharts() { if (curTab && $('#v-dash').classList.contains('on')) 
 
 /* gantt */
 function gantt() {
-  const A = [['Plan de trabajo (P1)', 1, 5, '--oro'], ['Instrumentos y piloto', 3, 5, '--verde'], ['Trabajo de campo', 6, 13, '--verde'], ['Compradores y precios', 8, 15, '--verde'], ['Diagnóstico (P2)', 13, 15, '--verde'], ['Procesamiento y tablero', 14, 21, '--cafe2'], ['Estudio preliminar (P3)', 20, 25, '--cafe2'], ['Plan comercial', 22, 27, '--rojo'], ['Versión final (P4)', 27, 30, '--rojo']];
+  const A = [['Plan de trabajo (P1)', 1, 5, '--oro'], ['Instrumentos y piloto', 3, 5, '--verde'], ['Trabajo de campo', 6, 13, '--verde'], ['Compradores y precios', 6, 19, '--verde'], ['Diagnóstico (P2)', 13, 15, '--verde'], ['Procesamiento y tablero', 14, 22, '--cafe2'], ['Estudio preliminar (P3)', 20, 25, '--cafe2'], ['Plan comercial', 22, 27, '--rojo'], ['Versión final (P4)', 27, 30, '--rojo']];
   let h = '<div></div>' + Array.from({ length: 30 }, (_, i) => `<div class="h">${i + 1}</div>`).join('');
   A.forEach((a, k) => { h += `<div class="lb" style="grid-row:${k + 2};grid-column:1">${a[0]}</div><div class="bar" style="grid-row:${k + 2};grid-column:${a[1] + 1} / ${a[2] + 2};background:var(${a[3]});animation-delay:${k * .08}s"></div>`; });
   $('#gantt').innerHTML = h;
